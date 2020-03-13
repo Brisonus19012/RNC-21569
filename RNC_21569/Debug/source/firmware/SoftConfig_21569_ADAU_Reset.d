@@ -1,0 +1,37 @@
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../source/firmware/SoftConfig_21569_ADAU_Reset.c
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/drivers/twi/adi_twi_2156x.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/adi_osal.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/adi_osal_arch.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/stdint.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/yvals.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/stdbool.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/adi_types.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/platform.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/platform_include.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/cdef21569.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/ADSP-2156x-core_cdef.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/ADSP-2156x-core.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/def21569.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/ADSP_2156x_HPC.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/ADSP_SC5xx_legacy.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/def2156x_id_macros.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/ADSP_2156x_HPC_cdef.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/internal_system_prototypes.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/processor_include.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/21569.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/platform_include.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/adi_core.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/platform.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/cache.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/builtins.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/builtins_support.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/services/int/adi_int.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/services/int/adi_int_id.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/interrupt.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sysreg.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/builtins.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/builtins_support.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/platform_include.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../system/drivers/twi/adi_twi_config_2156x.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/stdio.h
+source/firmware/SoftConfig_21569_ADAU_Reset.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/stdio_21xxx.h

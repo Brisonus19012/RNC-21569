@@ -1,0 +1,941 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/Analog Devices/CrossCore Embedded Studio 2.9.1/System/linker_log.xsl"?>
+<DOCUMENT gen_time='Thu Mar 12 17:56:27 2020
+'>
+<MSG id='0490D1F8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio0']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-pal\adi_a2b_pal.doj(seg_l1_block0)
+    libc.dlb[cache_set_range_ba.doj](seg_int_data)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490E618' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_sw_code_prio0']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-pal\adi_a2b_pal.doj(seg_l1_block0)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490D9D8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_nw_code_prio0']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-pal\adi_a2b_pal.doj(seg_l1_block0)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490E458' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio1']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[calloc_ba.doj](seg_dmda)
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490DC78' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio1_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490E538' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio2']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\a2bmaster_plugin.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\a2bmaster_verinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\discovery.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\pwrdiag.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2b_peri_config.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2bslave_plugin.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2bslave_verinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\a2b_bdd_helper.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\bdd_pb2.pb.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\pb_decode.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\diag.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\i2c.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\jobexec.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\memmgr.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\stackinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\system.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\util.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_codecInit.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_init.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_pal.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_sys.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_timer.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_dmda)
+    a2b_stack\stack-app\app.doj(seg_dmda)
+    source\firmware\SoftConfig_21569_ADAU_Reset.doj(seg_dmda)
+    source\firmware\SoftConfig_21569_ADC_DAC.doj(seg_dmda)
+    src\RNC_21569.doj(seg_dmda)
+    system\drivers\sport\adi_sport.doj(seg_dmda)
+    system\drivers\twi\adi_twi.doj(seg_dmda)
+    system\services\dma\adi_dma.doj(seg_dmda)
+    system\services\pcg\adi_pcg.doj(seg_dmda)
+    system\services\pdma\adi_pdma_2156x.doj(seg_dmda)
+    system\services\pwr\adi_pwr.doj(seg_dmda)
+    system\services\tmr\adi_tmr.doj(seg_dmda)
+    system\startup_ldf\app_heaptab.doj(seg_dmda)
+    libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
+    libc.dlb[calloc_ba.doj](seg_dmda)
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_reg_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_install_ba.doj](seg_dmda)
+    libc.dlb[heap_lookup_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heap_setup_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)
+    libssl.dlb[adi_gpio.doj](seg_dmda)
+    libssl.dlb[adi_sec.doj](seg_dmda)
+    libssl.dlb[adi_spu.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490E1B8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio2_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[errno.doj](seg_dmda)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490DAB8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio3']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\a2bmaster_plugin.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\a2bmaster_verinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\discovery.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\pwrdiag.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2b_peri_config.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2bslave_plugin.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2bslave_verinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\a2b_bdd_helper.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\bdd_pb2.pb.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\pb_decode.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\diag.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\i2c.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\jobexec.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\memmgr.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\stackinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\system.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\util.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_codecInit.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_init.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_pal.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_sys.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_timer.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_dmda)
+    a2b_stack\stack-app\app.doj(seg_dmda)
+    source\firmware\SoftConfig_21569_ADAU_Reset.doj(seg_dmda)
+    source\firmware\SoftConfig_21569_ADC_DAC.doj(seg_dmda)
+    src\RNC_21569.doj(seg_dmda)
+    system\drivers\sport\adi_sport.doj(seg_dmda)
+    system\drivers\twi\adi_twi.doj(seg_dmda)
+    system\services\dma\adi_dma.doj(seg_dmda)
+    system\services\pcg\adi_pcg.doj(seg_dmda)
+    system\services\pdma\adi_pdma_2156x.doj(seg_dmda)
+    system\services\pwr\adi_pwr.doj(seg_dmda)
+    system\services\tmr\adi_tmr.doj(seg_dmda)
+    system\startup_ldf\app_heaptab.doj(seg_dmda)
+    libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
+    libc.dlb[calloc_ba.doj](seg_dmda)
+    libc.dlb[dbg_assert2_ba.doj](seg_dmda)
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_reg_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_install_ba.doj](seg_dmda)
+    libc.dlb[heap_lookup_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heap_setup_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[lib_set_cache_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[prefetch_ctrl_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libc.dlb[signal_ba.doj](seg_dmda)
+    libc.dlb[xsignal_ba.doj](seg_dmda)
+    libio.dlb[devIOtab_c08_any.doj](seg_dmda)
+    libio.dlb[dev_init_c08_any.doj](seg_dmda)
+    libio.dlb[dev_write_c08_any.doj](seg_dmda)
+    libio.dlb[devtab_c08_any.doj](seg_dmda)
+    libio.dlb[fflush_c08_any.doj](seg_dmda)
+    libio.dlb[primiolibtab_c08_any.doj](seg_dmda)
+    libio.dlb[printf_c08_d32.doj](seg_dmda)
+    libio.dlb[xfiles_c08_any.doj](seg_dmda)
+    libio.dlb[xhexdigits_c08_any.doj](seg_dmda)
+    libio.dlb[xlong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xlonglong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xparse_format_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_close_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_open_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_read_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_remove_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_rename_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_seek_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_write2_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_a_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprint_fixed_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprnt_c08_d32.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)
+    libssl.dlb[adi_gpio.doj](seg_dmda)
+    libssl.dlb[adi_sec.doj](seg_dmda)
+    libssl.dlb[adi_spu.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490D3B8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_data_prio3_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[errno.doj](seg_dmda)
+    libc.dlb[exit_value.doj](seg_dmda)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
+    libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490DE38' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio0']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_l1_block1)
+    libc.dlb[cache_set_range_ba.doj](seg_int_data)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490EA78' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_sw_code_prio0']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_l1_block1)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490DD58' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_nw_code_prio0']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_l1_block1)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490E0D8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio1']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[calloc_ba.doj](seg_dmda)
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490D118' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio1_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490D498' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio2']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\a2bmaster_plugin.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\a2bmaster_verinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\discovery.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\pwrdiag.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2b_peri_config.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2bslave_plugin.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2bslave_verinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\a2b_bdd_helper.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\bdd_pb2.pb.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\pb_decode.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\diag.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\i2c.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\jobexec.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\memmgr.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\stackinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\system.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\util.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_codecInit.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_init.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_pal.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_sys.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_timer.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_dmda)
+    a2b_stack\stack-app\app.doj(seg_dmda)
+    source\firmware\SoftConfig_21569_ADAU_Reset.doj(seg_dmda)
+    source\firmware\SoftConfig_21569_ADC_DAC.doj(seg_dmda)
+    src\RNC_21569.doj(seg_dmda)
+    system\drivers\sport\adi_sport.doj(seg_dmda)
+    system\drivers\twi\adi_twi.doj(seg_dmda)
+    system\services\dma\adi_dma.doj(seg_dmda)
+    system\services\pcg\adi_pcg.doj(seg_dmda)
+    system\services\pdma\adi_pdma_2156x.doj(seg_dmda)
+    system\services\pwr\adi_pwr.doj(seg_dmda)
+    system\services\tmr\adi_tmr.doj(seg_dmda)
+    system\startup_ldf\app_heaptab.doj(seg_dmda)
+    libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
+    libc.dlb[calloc_ba.doj](seg_dmda)
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_reg_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_install_ba.doj](seg_dmda)
+    libc.dlb[heap_lookup_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heap_setup_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)
+    libssl.dlb[adi_gpio.doj](seg_dmda)
+    libssl.dlb[adi_sec.doj](seg_dmda)
+    libssl.dlb[adi_spu.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490D658' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio2_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[errno.doj](seg_dmda)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490EB58' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio3']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\a2bmaster_plugin.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\a2bmaster_verinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\discovery.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\pwrdiag.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2b_peri_config.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2bslave_plugin.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2bslave_verinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\a2b_bdd_helper.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\bdd_pb2.pb.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\pb_decode.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\diag.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\i2c.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\jobexec.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\memmgr.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\stackinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\system.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\util.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_codecInit.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_init.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_pal.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_sys.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_timer.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_dmda)
+    a2b_stack\stack-app\app.doj(seg_dmda)
+    source\firmware\SoftConfig_21569_ADAU_Reset.doj(seg_dmda)
+    source\firmware\SoftConfig_21569_ADC_DAC.doj(seg_dmda)
+    src\RNC_21569.doj(seg_dmda)
+    system\drivers\sport\adi_sport.doj(seg_dmda)
+    system\drivers\twi\adi_twi.doj(seg_dmda)
+    system\services\dma\adi_dma.doj(seg_dmda)
+    system\services\pcg\adi_pcg.doj(seg_dmda)
+    system\services\pdma\adi_pdma_2156x.doj(seg_dmda)
+    system\services\pwr\adi_pwr.doj(seg_dmda)
+    system\services\tmr\adi_tmr.doj(seg_dmda)
+    system\startup_ldf\app_heaptab.doj(seg_dmda)
+    libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
+    libc.dlb[calloc_ba.doj](seg_dmda)
+    libc.dlb[dbg_assert2_ba.doj](seg_dmda)
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_reg_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_install_ba.doj](seg_dmda)
+    libc.dlb[heap_lookup_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heap_setup_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[lib_set_cache_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[prefetch_ctrl_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libc.dlb[signal_ba.doj](seg_dmda)
+    libc.dlb[xsignal_ba.doj](seg_dmda)
+    libio.dlb[devIOtab_c08_any.doj](seg_dmda)
+    libio.dlb[dev_init_c08_any.doj](seg_dmda)
+    libio.dlb[dev_write_c08_any.doj](seg_dmda)
+    libio.dlb[devtab_c08_any.doj](seg_dmda)
+    libio.dlb[fflush_c08_any.doj](seg_dmda)
+    libio.dlb[primiolibtab_c08_any.doj](seg_dmda)
+    libio.dlb[printf_c08_d32.doj](seg_dmda)
+    libio.dlb[xfiles_c08_any.doj](seg_dmda)
+    libio.dlb[xhexdigits_c08_any.doj](seg_dmda)
+    libio.dlb[xlong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xlonglong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xparse_format_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_close_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_open_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_read_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_remove_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_rename_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_seek_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_write2_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_a_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprint_fixed_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprnt_c08_d32.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)
+    libssl.dlb[adi_gpio.doj](seg_dmda)
+    libssl.dlb[adi_sec.doj](seg_dmda)
+    libssl.dlb[adi_spu.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490D738' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block1_data_prio3_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[errno.doj](seg_dmda)
+    libc.dlb[exit_value.doj](seg_dmda)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
+    libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490E298' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block2_data_prio0_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-pal\adi_a2b_pal.doj(seg_l1_block2)
+    a2b_stack\a2bstack-pal\adi_a2b_timer.doj(seg_l1_block2)
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_l1_block2)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490D818' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block2_data_prio0']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-pal\adi_a2b_pal.doj(seg_l1_block2)
+    a2b_stack\a2bstack-pal\adi_a2b_timer.doj(seg_l1_block2)
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_l1_block2)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490DB98' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block2_nw_code_prio0']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-pal\adi_a2b_pal.doj(seg_l1_block2)
+    a2b_stack\a2bstack-pal\adi_a2b_timer.doj(seg_l1_block2)
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_l1_block2)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490E378' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_data_prio0']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-pal\adi_a2b_pal.doj(seg_l1_block3)
+    a2b_stack\a2bstack-pal\adi_a2b_sportdriver.doj(seg_l1_block3)
+    a2b_stack\a2bstack-pal\adi_a2b_timer.doj(seg_l1_block3)
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_l1_block3)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='0490D038' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_data_prio0_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-pal\adi_a2b_pal.doj(seg_l1_block3)
+    a2b_stack\a2bstack-pal\adi_a2b_sportdriver.doj(seg_l1_block3)
+    a2b_stack\a2bstack-pal\adi_a2b_timer.doj(seg_l1_block3)
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_l1_block3)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='055061F8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio0']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    app_startup.doj(seg_int_code)
+    a2b_stack\a2bstack-pal\adi_a2b_pal.doj(seg_l1_block3)
+    a2b_stack\a2bstack-pal\adi_a2b_sportdriver.doj(seg_l1_block3)
+    a2b_stack\a2bstack-pal\adi_a2b_timer.doj(seg_l1_block3)
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_l1_block3)
+    system\services\pwr\adi_pwr.doj(seg_int_code)
+    app_startup.doj(seg_int_code)
+    libc.dlb[cache_set_range_ba.doj](seg_int_code)
+    libc.dlb[flush_data_buffer_ba.doj](seg_int_code)
+    libc.dlb[lib_set_cache_ba.doj](seg_int_code)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='05506C78' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio1']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libcc.dlb[memcpy_char8_ba.doj](seg_pmco)
+    libc.dlb[adi_fatal_error.doj](seg_pmco)
+    libc.dlb[fatal_error_ba.doj](seg_pmco)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_pmco)
+    libc.dlb[isinff.doj](seg_pmco)
+    libc.dlb[memset_char8_ba.doj](seg_pmco)
+    libc.dlb[set_c.doj](seg_pmco)
+    libosal_noos.dlb[adi_osal_noos_arch_a.doj](seg_pmco)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='05506738' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio2']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    app_startup.doj(seg_pmco)
+    app_startup.doj(seg_pmco)
+    libcc.dlb[divrem_s32.doj](seg_pmco)
+    libcc.dlb[divrem_s64_char8_ba.doj](seg_pmco)
+    libcc.dlb[divrem_u32.doj](seg_pmco)
+    libcc.dlb[divrem_u64_char8_ba.doj](seg_pmco)
+    libcc.dlb[float_divide.doj](seg_pmco)
+    libcc.dlb[flt_sprt.doj](seg_pmco)
+    libcc.dlb[lib_ldtof.doj](seg_pmco)
+    libcc.dlb[memcpy_char8_ba.doj](seg_pmco)
+    libcc.dlb[strlen_char8_ba.doj](seg_pmco)
+    libc.dlb[adi_fatal_error.doj](seg_pmco)
+    libc.dlb[dispatched_handler_activate_ba.doj](seg_pmco)
+    libc.dlb[dispatched_handler_deactivate_ba.doj](seg_pmco)
+    libc.dlb[dispatched_handler_unregister_ba.doj](seg_pmco)
+    libc.dlb[fatal_error_ba.doj](seg_pmco)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_pmco)
+    libc.dlb[isinff.doj](seg_pmco)
+    libc.dlb[memset_char8_ba.doj](seg_pmco)
+    libc.dlb[set_c.doj](seg_pmco)
+    libosal_noos.dlb[adi_osal_noos_arch_a.doj](seg_pmco)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='055062D8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_nw_code_prio3']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    app_startup.doj(seg_pmco)
+    app_startup.doj(seg_pmco)
+    libcc.dlb[divrem_s32.doj](seg_pmco)
+    libcc.dlb[divrem_s64_char8_ba.doj](seg_pmco)
+    libcc.dlb[divrem_u32.doj](seg_pmco)
+    libcc.dlb[divrem_u64_char8_ba.doj](seg_pmco)
+    libcc.dlb[float_divide.doj](seg_pmco)
+    libcc.dlb[flt_sprt.doj](seg_pmco)
+    libcc.dlb[lib_ldtof.doj](seg_pmco)
+    libcc.dlb[memcpy_char8_ba.doj](seg_pmco)
+    libcc.dlb[strlen_char8_ba.doj](seg_pmco)
+    libc.dlb[adi_bad_reset_detected.doj](seg_pmco)
+    libc.dlb[adi_fatal_error.doj](seg_pmco)
+    libc.dlb[adi_ilop_detected.doj](seg_pmco)
+    libc.dlb[adi_parity_error_detected.doj](seg_pmco)
+    libc.dlb[dispatched_handler_activate_ba.doj](seg_pmco)
+    libc.dlb[dispatched_handler_deactivate_ba.doj](seg_pmco)
+    libc.dlb[dispatched_handler_unregister_ba.doj](seg_pmco)
+    libc.dlb[fatal_error_ba.doj](seg_pmco)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_pmco)
+    libc.dlb[isinff.doj](seg_pmco)
+    libc.dlb[memset_char8_ba.doj](seg_pmco)
+    libc.dlb[no_dispatched_handler.doj](seg_pmco)
+    libc.dlb[set_c.doj](seg_pmco)
+    libosal_noos.dlb[adi_osal_noos_arch_a.doj](seg_pmco)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='05507378' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_nw_code']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    app_startup.doj(seg_int_code)
+    system\services\pwr\adi_pwr.doj(seg_int_code)
+    app_startup.doj(seg_int_code)
+    libc.dlb[cache_set_range_ba.doj](seg_int_code)
+    libc.dlb[flush_data_buffer_ba.doj](seg_int_code)
+    libc.dlb[lib_set_cache_ba.doj](seg_int_code)
+    app_startup.doj(seg_pmco)
+    app_startup.doj(seg_pmco)
+    libcc.dlb[divrem_s32.doj](seg_pmco)
+    libcc.dlb[divrem_s64_char8_ba.doj](seg_pmco)
+    libcc.dlb[divrem_u32.doj](seg_pmco)
+    libcc.dlb[divrem_u64_char8_ba.doj](seg_pmco)
+    libcc.dlb[float_divide.doj](seg_pmco)
+    libcc.dlb[flt_sprt.doj](seg_pmco)
+    libcc.dlb[lib_ldtof.doj](seg_pmco)
+    libcc.dlb[memcpy_char8_ba.doj](seg_pmco)
+    libcc.dlb[strlen_char8_ba.doj](seg_pmco)
+    libc.dlb[adi_bad_reset_detected.doj](seg_pmco)
+    libc.dlb[adi_fatal_error.doj](seg_pmco)
+    libc.dlb[adi_ilop_detected.doj](seg_pmco)
+    libc.dlb[adi_parity_error_detected.doj](seg_pmco)
+    libc.dlb[dispatched_handler_activate_ba.doj](seg_pmco)
+    libc.dlb[dispatched_handler_deactivate_ba.doj](seg_pmco)
+    libc.dlb[dispatched_handler_unregister_ba.doj](seg_pmco)
+    libc.dlb[fatal_error_ba.doj](seg_pmco)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_pmco)
+    libc.dlb[isinff.doj](seg_pmco)
+    libc.dlb[memset_char8_ba.doj](seg_pmco)
+    libc.dlb[no_dispatched_handler.doj](seg_pmco)
+    libc.dlb[set_c.doj](seg_pmco)
+    libosal_noos.dlb[adi_osal_noos_arch_a.doj](seg_pmco)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='05507618' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block2_data']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\a2bmaster_plugin.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\a2bmaster_verinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\discovery.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\pwrdiag.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2b_peri_config.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2bslave_plugin.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2bslave_verinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\a2b_bdd_helper.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\bdd_pb2.pb.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\pb_decode.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\diag.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\i2c.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\jobexec.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\memmgr.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\stackinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\system.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\util.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_codecInit.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_init.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_pal.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_sys.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_timer.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_dmda)
+    a2b_stack\stack-app\app.doj(seg_dmda)
+    source\firmware\SoftConfig_21569_ADAU_Reset.doj(seg_dmda)
+    source\firmware\SoftConfig_21569_ADC_DAC.doj(seg_dmda)
+    src\RNC_21569.doj(seg_dmda)
+    system\drivers\sport\adi_sport.doj(seg_dmda)
+    system\drivers\twi\adi_twi.doj(seg_dmda)
+    system\services\dma\adi_dma.doj(seg_dmda)
+    system\services\pcg\adi_pcg.doj(seg_dmda)
+    system\services\pdma\adi_pdma_2156x.doj(seg_dmda)
+    system\services\pwr\adi_pwr.doj(seg_dmda)
+    system\services\tmr\adi_tmr.doj(seg_dmda)
+    system\startup_ldf\app_heaptab.doj(seg_dmda)
+    libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
+    libc.dlb[cache_set_range_ba.doj](seg_int_data)
+    libc.dlb[calloc_ba.doj](seg_dmda)
+    libc.dlb[dbg_assert2_ba.doj](seg_dmda)
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_reg_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_install_ba.doj](seg_dmda)
+    libc.dlb[heap_lookup_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heap_setup_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[lib_set_cache_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[prefetch_ctrl_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libc.dlb[signal_ba.doj](seg_dmda)
+    libc.dlb[xsignal_ba.doj](seg_dmda)
+    libio.dlb[devIOtab_c08_any.doj](seg_dmda)
+    libio.dlb[dev_init_c08_any.doj](seg_dmda)
+    libio.dlb[dev_write_c08_any.doj](seg_dmda)
+    libio.dlb[devtab_c08_any.doj](seg_dmda)
+    libio.dlb[fflush_c08_any.doj](seg_dmda)
+    libio.dlb[primiolibtab_c08_any.doj](seg_dmda)
+    libio.dlb[printf_c08_d32.doj](seg_dmda)
+    libio.dlb[xfiles_c08_any.doj](seg_dmda)
+    libio.dlb[xhexdigits_c08_any.doj](seg_dmda)
+    libio.dlb[xlong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xlonglong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xparse_format_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_close_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_open_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_read_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_remove_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_rename_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_seek_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_write2_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_a_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprint_fixed_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprnt_c08_d32.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)
+    libssl.dlb[adi_gpio.doj](seg_dmda)
+    libssl.dlb[adi_sec.doj](seg_dmda)
+    libssl.dlb[adi_spu.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='05507538' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block2_data_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[errno.doj](seg_dmda)
+    libc.dlb[exit_value.doj](seg_dmda)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
+    libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='055063B8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_data']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\a2bmaster_plugin.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\a2bmaster_verinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\discovery.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\pwrdiag.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2b_peri_config.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2bslave_plugin.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2bslave_verinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\a2b_bdd_helper.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\bdd_pb2.pb.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\pb_decode.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\diag.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\i2c.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\jobexec.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\memmgr.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\stackinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\system.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\util.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_codecInit.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_init.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_pal.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_sys.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_timer.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_dmda)
+    a2b_stack\stack-app\app.doj(seg_dmda)
+    source\firmware\SoftConfig_21569_ADAU_Reset.doj(seg_dmda)
+    source\firmware\SoftConfig_21569_ADC_DAC.doj(seg_dmda)
+    src\RNC_21569.doj(seg_dmda)
+    system\drivers\sport\adi_sport.doj(seg_dmda)
+    system\drivers\twi\adi_twi.doj(seg_dmda)
+    system\services\dma\adi_dma.doj(seg_dmda)
+    system\services\pcg\adi_pcg.doj(seg_dmda)
+    system\services\pdma\adi_pdma_2156x.doj(seg_dmda)
+    system\services\pwr\adi_pwr.doj(seg_dmda)
+    system\services\tmr\adi_tmr.doj(seg_dmda)
+    system\startup_ldf\app_heaptab.doj(seg_dmda)
+    libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
+    libc.dlb[cache_set_range_ba.doj](seg_int_data)
+    libc.dlb[calloc_ba.doj](seg_dmda)
+    libc.dlb[dbg_assert2_ba.doj](seg_dmda)
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_reg_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_install_ba.doj](seg_dmda)
+    libc.dlb[heap_lookup_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heap_setup_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[lib_set_cache_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[prefetch_ctrl_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libc.dlb[signal_ba.doj](seg_dmda)
+    libc.dlb[xsignal_ba.doj](seg_dmda)
+    libio.dlb[devIOtab_c08_any.doj](seg_dmda)
+    libio.dlb[dev_init_c08_any.doj](seg_dmda)
+    libio.dlb[dev_write_c08_any.doj](seg_dmda)
+    libio.dlb[devtab_c08_any.doj](seg_dmda)
+    libio.dlb[fflush_c08_any.doj](seg_dmda)
+    libio.dlb[primiolibtab_c08_any.doj](seg_dmda)
+    libio.dlb[printf_c08_d32.doj](seg_dmda)
+    libio.dlb[xfiles_c08_any.doj](seg_dmda)
+    libio.dlb[xhexdigits_c08_any.doj](seg_dmda)
+    libio.dlb[xlong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xlonglong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xparse_format_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_close_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_open_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_read_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_remove_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_rename_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_seek_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_write2_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_a_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprint_fixed_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprnt_c08_d32.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)
+    libssl.dlb[adi_gpio.doj](seg_dmda)
+    libssl.dlb[adi_sec.doj](seg_dmda)
+    libssl.dlb[adi_spu.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='055076F8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block3_data_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[errno.doj](seg_dmda)
+    libc.dlb[exit_value.doj](seg_dmda)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
+    libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='055069D8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_cpp_eh_gdt_nw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    app_startup.doj(.gdt)
+    app_startup.doj(.gdt)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='055077D8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_cpp_ctors_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    app_startup.doj(seg_ctdml)
+    app_startup.doj(seg_ctdml)
+    libc.dlb[set_c.doj](seg_ctdml)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='05506498' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_sw_code']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2b_peri_config.doj(seg_l2)
+    a2b_stack\stack-app\adi_a2b_audioroutingtable.doj(seg_l2)
+    a2b_stack\stack-app\adi_a2b_busconfig.doj(seg_l2)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='05506818' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_nw_code']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    app_startup.doj(seg_pmco)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2b_peri_config.doj(seg_l2)
+    a2b_stack\stack-app\adi_a2b_audioroutingtable.doj(seg_l2)
+    a2b_stack\stack-app\adi_a2b_busconfig.doj(seg_l2)
+    app_startup.doj(seg_pmco)
+    libcc.dlb[divrem_s32.doj](seg_pmco)
+    libcc.dlb[divrem_s64_char8_ba.doj](seg_pmco)
+    libcc.dlb[divrem_u32.doj](seg_pmco)
+    libcc.dlb[divrem_u64_char8_ba.doj](seg_pmco)
+    libcc.dlb[float_divide.doj](seg_pmco)
+    libcc.dlb[flt_sprt.doj](seg_pmco)
+    libcc.dlb[lib_ldtof.doj](seg_pmco)
+    libcc.dlb[memcpy_char8_ba.doj](seg_pmco)
+    libcc.dlb[strlen_char8_ba.doj](seg_pmco)
+    libc.dlb[adi_bad_reset_detected.doj](seg_pmco)
+    libc.dlb[adi_fatal_error.doj](seg_pmco)
+    libc.dlb[adi_ilop_detected.doj](seg_pmco)
+    libc.dlb[adi_parity_error_detected.doj](seg_pmco)
+    libc.dlb[dispatched_handler_activate_ba.doj](seg_pmco)
+    libc.dlb[dispatched_handler_deactivate_ba.doj](seg_pmco)
+    libc.dlb[dispatched_handler_unregister_ba.doj](seg_pmco)
+    libc.dlb[fatal_error_ba.doj](seg_pmco)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_pmco)
+    libc.dlb[isinff.doj](seg_pmco)
+    libc.dlb[memset_char8_ba.doj](seg_pmco)
+    libc.dlb[no_dispatched_handler.doj](seg_pmco)
+    libc.dlb[set_c.doj](seg_pmco)
+    libosal_noos.dlb[adi_osal_noos_arch_a.doj](seg_pmco)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='055068F8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_data']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\a2bmaster_plugin.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\a2bmaster_verinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\discovery.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-master\src\pwrdiag.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2b_peri_config.doj(seg_l2)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2b_peri_config.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2bslave_plugin.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bplugin-slave\src\a2bslave_verinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\a2b_bdd_helper.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\bdd_pb2.pb.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack-protobuf\src\pb_decode.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\diag.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\i2c.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\jobexec.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\memmgr.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\stackinfo.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\system.doj(seg_dmda)
+    a2b_stack\a2bstack-gen\a2bstack\src\util.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_codecInit.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_init.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_pal.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_sys.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_timer.doj(seg_dmda)
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_dmda)
+    a2b_stack\stack-app\adi_a2b_audioroutingtable.doj(seg_l2)
+    a2b_stack\stack-app\adi_a2b_busconfig.doj(seg_l2)
+    a2b_stack\stack-app\app.doj(seg_dmda)
+    source\firmware\SoftConfig_21569_ADAU_Reset.doj(seg_dmda)
+    source\firmware\SoftConfig_21569_ADC_DAC.doj(seg_dmda)
+    src\RNC_21569.doj(seg_dmda)
+    system\drivers\sport\adi_sport.doj(seg_dmda)
+    system\drivers\twi\adi_twi.doj(seg_dmda)
+    system\services\dma\adi_dma.doj(seg_dmda)
+    system\services\pcg\adi_pcg.doj(seg_dmda)
+    system\services\pdma\adi_pdma_2156x.doj(seg_dmda)
+    system\services\pwr\adi_pwr.doj(seg_dmda)
+    system\services\tmr\adi_tmr.doj(seg_dmda)
+    system\startup_ldf\app_heaptab.doj(seg_dmda)
+    libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
+    libc.dlb[calloc_ba.doj](seg_dmda)
+    libc.dlb[dbg_assert2_ba.doj](seg_dmda)
+    libc.dlb[default_heap_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_reg_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_install_ba.doj](seg_dmda)
+    libc.dlb[heap_lookup_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heap_setup_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[lib_set_cache_ba.doj](seg_dmda)
+    libc.dlb[malloc_ba.doj](seg_dmda)
+    libc.dlb[prefetch_ctrl_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libc.dlb[signal_ba.doj](seg_dmda)
+    libc.dlb[xsignal_ba.doj](seg_dmda)
+    libio.dlb[devIOtab_c08_any.doj](seg_dmda)
+    libio.dlb[dev_init_c08_any.doj](seg_dmda)
+    libio.dlb[dev_write_c08_any.doj](seg_dmda)
+    libio.dlb[devtab_c08_any.doj](seg_dmda)
+    libio.dlb[fflush_c08_any.doj](seg_dmda)
+    libio.dlb[primiolibtab_c08_any.doj](seg_dmda)
+    libio.dlb[printf_c08_d32.doj](seg_dmda)
+    libio.dlb[xfiles_c08_any.doj](seg_dmda)
+    libio.dlb[xhexdigits_c08_any.doj](seg_dmda)
+    libio.dlb[xlong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xlonglong_to_string_c08_any.doj](seg_dmda)
+    libio.dlb[xparse_format_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_close_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_open_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_read_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_remove_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_rename_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_seek_c08_any.doj](seg_dmda)
+    libio.dlb[xprim_write2_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_a_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprint_fixed_c08_any.doj](seg_dmda)
+    libio.dlb[xprint_float_c08_d32.doj](seg_dmda)
+    libio.dlb[xprnt_c08_d32.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)
+    libssl.dlb[adi_gpio.doj](seg_dmda)
+    libssl.dlb[adi_sec.doj](seg_dmda)
+    libssl.dlb[adi_spu.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='055078B8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_data_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[errno.doj](seg_dmda)
+    libc.dlb[exit_value.doj](seg_dmda)
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)
+    libc.dlb[xexit.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='05507458' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_bsz']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\a2bstack-pal\adi_a2b_sportdriver.doj(seg_l2_bsz_data)
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_l2_bsz_data)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='05506D58' mid='li2131' type='Warning' >
+<FILE><![CDATA[C:\Users\86157\Desktop\20200219\RNC_21569\system\startup_ldf\app.ldf]]></FILE>
+<FILE_LINE><![CDATA[1230]]></FILE_LINE>
+<TEXT><![CDATA[Input section(s) of incompatible init qualifier detected in the output section 'dxe_l2_bsz_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) have no init qualifier:
+    a2b_stack\a2bstack-pal\adi_a2b_sportdriver.doj(seg_l2_bsz_data)
+    a2b_stack\a2bstack-pal\adi_a2b_twidriver.doj(seg_l2_bsz_data)
+]]></EXTENDED_INFO>
+</MSG>
+<MSG id='05506578' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_uncached']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    a2b_stack\stack-app\adi_a2b_busconfig.doj(seg_l2_uncached)]]></EXTENDED_INFO>
+</MSG>
+</DOCUMENT>

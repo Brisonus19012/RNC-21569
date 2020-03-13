@@ -1,0 +1,45 @@
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/lib/src/drivers/Source/sport/adi_sport.c
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/platform.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/platform_include.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/cdef21569.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/ADSP-2156x-core_cdef.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/stdint.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/yvals.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/ADSP-2156x-core.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/def21569.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/ADSP_2156x_HPC.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/ADSP_SC5xx_legacy.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/def2156x_id_macros.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/ADSP_2156x_HPC_cdef.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/internal_system_prototypes.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/processor_include.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/21569.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/platform_include.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/adi_core.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/platform.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/cache.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/stdbool.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/builtins.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/builtins_support.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/lib/src/drivers/Source/sport/adi_sport_2156x.c
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/stddef.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/string.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/adi_osal.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/adi_osal_arch.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/adi_types.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/assert.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/services/int/adi_int.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/services/int/adi_int_id.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/interrupt.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sysreg.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/builtins.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/builtins_support.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/platform_include.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/drivers/sport/adi_sport.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/drivers/sport/adi_sport_2156x.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/services/pdma/adi_pdma_2156x.h
+system/drivers/sport/adi_sport.doj: ../system/services/pdma/adi_pdma_config_2156x.h
+system/drivers/sport/adi_sport.doj: ../system/drivers/sport/adi_sport_config_2156x.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/lib/src/drivers/Source/sport/adi_sport_def_2156x.h
+system/drivers/sport/adi_sport.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/lib/src/drivers/Source/sport/adi_sport_data_2156x.c
+system/drivers/sport/adi_sport.doj: ../system/drivers/sport/adi_sport_config_2156x.h
