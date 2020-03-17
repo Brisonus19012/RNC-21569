@@ -25,37 +25,10 @@ to the terms of the associated Analog Devices License Agreement.
 /* Add your custom header content here */
 
 
-#define SAMPLE_RATE   			        (48000u)       /* DAC sample rate */
-
-#define REFERENCE_FREQ 				    (2000u)
-#define SAMPLES_PER_PERIOD 			    (SAMPLE_RATE) / (REFERENCE_FREQ)
-#define SAMPLE_SIZE 				    (4u)
-
-#define RxNUM_CHANNELS				    (16u)
-#define TxNUM_CHANNELS				    (8u)
-
-/* Macro to set buffer size */
-#define A2B_BUFFER_SIZE 	            (SAMPLES_PER_PERIOD * RxNUM_CHANNELS)
-#define DAC_BUFFER_SIZE 	            (SAMPLES_PER_PERIOD * TxNUM_CHANNELS)
-
-#define SPORT_DEVICE_4A 			    4u			/* SPORT device number */
-#define SPORT_DEVICE_0A 			    0u			/* SPORT device number */
-
-
-//#define TARGETADDR_1979    			(0x11u)     /* hardware address of adau1979 ADC */
-
-
-#define DMA_NUM_DESC 				    2u
-
 #define SUCCESS                         0
 #define FAILED                          -1
 
-
-#define CHECK_RESULT(eResult) \
-        if(eResult != 0)\
-		{\
-			return (1);\
-        }
+extern uint8_t InputReady;
 
 #define REPORT_ERROR        	       printf
 #define DEBUG_INFORMATION              printf

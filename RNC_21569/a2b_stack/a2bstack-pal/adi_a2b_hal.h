@@ -28,12 +28,6 @@ and its licensors.
 /*-------------- P O W E R --------------*/
 #include <services/pwr/adi_pwr.h>      /*!< ADI POWER definitions include file */
 
-/*-------------- A D A U 1 9 7 9 --------------*/
-//#include <drivers/adc/adau1979/adi_adau1979.h>      /*!< ADI ADAU1979 ADC definitions include file */
-
-/*-------------- A D A U 1 9 6 2 A --------------*/
-//#include <drivers/dac/adau1962a/adi_adau1962a.h>    /*!< ADI ADAU1962A DAC definitions include file */
-
 /*-------------- G P I O --------------*/
 #include <services/gpio/adi_gpio.h>                 /*!< ADI GPIO definitions include file */
 
@@ -44,7 +38,6 @@ and its licensors.
 #include <drivers/asrc/adi_asrc.h>                  /*!< ADI ASRC definitions include file */
 
 /*============== D E F I N E S ===============*/
-#define ADI_A2B_HAL_SPORT_MEM_SIZE           (ADI_SPORT_DMA_MEMORY_SIZE)
 
 /*-------------- S P I --------------*/
 
@@ -72,6 +65,10 @@ and its licensors.
 #define E_ADI_A2B_HAL_SPORT_1    (1U)                  /*!< Enumeration definition for SPORT 1 device                  */
 #define E_ADI_A2B_HAL_SPORT_2    (2U)                  /*!< Enumeration definition for SPORT 2 device                  */
 #define E_ADI_A2B_HAL_SPORT_3    (3U)                  /*!< Enumeration definition for SPORT 3 device                  */
+#define E_ADI_A2B_HAL_SPORT_4    (4U)                  /*!< Enumeration definition for SPORT 0 device                  */
+#define E_ADI_A2B_HAL_SPORT_5    (5U)                  /*!< Enumeration definition for SPORT 1 device                  */
+#define E_ADI_A2B_HAL_SPORT_6    (6U)                  /*!< Enumeration definition for SPORT 2 device                  */
+#define E_ADI_A2B_HAL_SPORT_7    (7U)                  /*!< Enumeration definition for SPORT 3 device                  */
 
 #define E_ADI_HALF_SPORT_A      (0U)                  /*!< First Half SPORT                                           */
 #define E_ADI_HALF_SPORT_B      (1U)                  /*!< Second Half SPORT                                          */
@@ -117,29 +114,7 @@ and its licensors.
 #define E_ADI_A2B_HAL_PCG_STATUS_SUCCES      (0U)        /*!< Enumeration definition for HAL PCG success status        */
 #define E_ADI_A2B_HAL_PCG_STATUS_FAILED      (-1)        /*!< Enumeration definition for HAL PCG error status          */
 #endif /* #if 0 */
-/*-------------- A D A U 1 9 7 9 --------------*/
 
-#define E_ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_32000HZ  (0U) /*!<  Enum definition for ADAU1979 Sampling rate 32000  HZ    */
-#define E_ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_44100HZ  (1U) /*!<  Enum definition for ADAU1979 Sampling rate 44100  HZ    */
-#define E_ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_48000HZ  (2U) /*!<  Enum definition for ADAU1979 Sampling rate 48000  HZ    */
-#define E_ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_96000HZ  (3U) /*!<  Enum definition for ADAU1979 Sampling rate 96000  HZ    */
-#define E_ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_192000HZ (4U) /*!<  Enum definition for ADAU1979 Sampling rate 192000 HZ    */
-#define E_ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_NONE     (5U) /*!<  Enum definition for ADAU1979 Sampling rate none         */
-
-#define E_ADI_A2B_HAL_ADAU1979_STATUS_SUCCESS       (0U) /*!<  Enum definition for HAL ADAU1979 success status         */
-#define E_ADI_A2B_HAL_ADAU1979_STATUS_FAILED        (-1) /*!<  Enum definition for HAL ADAU1979 error status           */
-
-/*-------------- A D A U 1 9 6 2 A --------------*/
-
-#define E_ADI_A2B_HAL_ADAU1962A_STATUS_SUCCESS       (0U)      /*!< Enum definition for HAL ADAU1962A success status   */
-#define E_ADI_A2B_HAL_ADAU1962A_STATUS_FAILED        (-1)      /*!< Enum definition for HAL ADAU1962A error status     */
-
-#define E_ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_32000HZ  (32000U ) /*!< Enum definition for ADAU1962A Sample rate 32   kHz */
-#define E_ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_44100HZ  (44100U ) /*!< Enum definition for ADAU1962A Sample rate 44.1 kHz */
-#define E_ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_48000HZ  (48000U ) /*!< Enum definition for ADAU1962A Sample rate 48   kHz */
-#define E_ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_96000HZ  (96000U ) /*!< Enum definition for ADAU1962A Sample rate 96   kHz */
-#define E_ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_192000HZ (192000U) /*!< Enum definition for ADAU1962A Sample rate 192  kHz */
-#define E_ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_NONE     (0U     ) /*!< Enum definition for ADAU1962A Sample rate none     */
 
 /*-------------- G P I O --------------*/
 
@@ -232,10 +207,6 @@ and its licensors.
 
 /*-------------- P C G --------------*/
 
-/*-------------- A D A U 1 9 7 9 --------------*/
-
-/*-------------- A D A U 1 9 6 2 A --------------*/
-
 /*-------------- G P I O --------------*/
 
 /*-------------- S P D I F Rx--------------*/
@@ -271,6 +242,10 @@ typedef enum ADI_A2B_HAL_SPORT_DEVICE
     ADI_A2B_HAL_SPORT_1 = E_ADI_A2B_HAL_SPORT_1,   /*!< SPORT 1  */
     ADI_A2B_HAL_SPORT_2 = E_ADI_A2B_HAL_SPORT_2,   /*!< SPORT 2  */
     ADI_A2B_HAL_SPORT_3 = E_ADI_A2B_HAL_SPORT_3,   /*!< SPORT 3  */
+	ADI_A2B_HAL_SPORT_4 = E_ADI_A2B_HAL_SPORT_4,   /*!< SPORT 0  */
+	ADI_A2B_HAL_SPORT_5 = E_ADI_A2B_HAL_SPORT_5,   /*!< SPORT 1  */
+	ADI_A2B_HAL_SPORT_6 = E_ADI_A2B_HAL_SPORT_2,   /*!< SPORT 2  */
+	ADI_A2B_HAL_SPORT_7 = E_ADI_A2B_HAL_SPORT_3,   /*!< SPORT 3  */
 }ADI_A2B_HAL_SPORT_DEVICE;
 
 /*! \enum ADI_A2B_HAL_HSPORT_ID
@@ -437,55 +412,6 @@ typedef struct ADI_A2B_HAL_PCG_DEV_CONFIG
                                                  is high for PCG. */
 }ADI_A2B_HAL_PCG_DEV_CONFIG;
 #endif /* #if 0 */
-/*-------------- A D A U 1 9 7 9 --------------*/
-
-typedef void* ADI_A2B_HAL_ADAU1979_HANDLE;   /*!<  HAL ADAU1979 handle       */
-
-typedef enum ADI_A2B_HAL_ADAU1979_STATUS
-{
-    ADI_A2B_HAL_ADAU1979_STATUS_SUCCESS = E_ADI_A2B_HAL_ADAU1979_STATUS_SUCCESS,  /*!<  HAL ADAU1979 success status     */
-    ADI_A2B_HAL_ADAU1979_STATUS_FAILED  = E_ADI_A2B_HAL_ADAU1979_STATUS_FAILED    /*!<  HAL ADAU1979 error status       */
-}ADI_A2B_HAL_ADAU1979_STATUS;
-
-typedef enum ADI_A2B_HAL_ADAU1979_SAMPLE_RATE
-{
-    ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_32000HZ  = E_ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_32000HZ ,  /*!< Sample rate 32   kHz */
-    ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_44100HZ  = E_ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_44100HZ ,  /*!< Sample rate 44.1 kHz */
-    ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_48000HZ  = E_ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_48000HZ ,  /*!< Sample rate 48   kHz */
-    ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_96000HZ  = E_ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_96000HZ ,  /*!< Sample rate 96   kHz */
-    ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_192000HZ = E_ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_192000HZ,  /*!< Sample rate 192  kHz */
-    ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_NONE     = E_ADI_A2B_HAL_ADAU1979_SAMPLE_RATE_NONE       /*!< Sample rate none     */
-}ADI_A2B_HAL_ADAU1979_SAMPLE_RATE;
-
-typedef struct ADI_A2B_HAL_ADAU1979_CONFIG
-{
-    ADI_A2B_HAL_ADAU1979_SAMPLE_RATE     eSampleRate;    /*!< ADAU1979 sampling rate */
-}ADI_A2B_HAL_ADAU1979_CONFIG;
-
-/*-------------- A D A U 1 9 6 2 A --------------*/
-
-typedef void* ADI_A2B_HAL_ADAU1962A_HANDLE;      /*!<  HAL ADAU1962A handle      */
-
-typedef enum ADI_A2B_HAL_ADAU1962A_STATUS
-{
-    ADI_A2B_HAL_ADAU1962A_STATUS_SUCCESS = E_ADI_A2B_HAL_ADAU1962A_STATUS_SUCCESS , /*!< HAL ADAU1962A success status   */
-    ADI_A2B_HAL_ADAU1962A_STATUS_FAILED  = E_ADI_A2B_HAL_ADAU1962A_STATUS_FAILED    /*!< HAL ADAU1962A error status     */
-}ADI_A2B_HAL_ADAU1962A_STATUS;
-
-typedef enum ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE
-{
-    ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_32000HZ  = E_ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_32000HZ , /*!< Sample rate 32   kHz*/
-    ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_44100HZ  = E_ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_44100HZ , /*!< Sample rate 44.1 kHz*/
-    ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_48000HZ  = E_ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_48000HZ , /*!< Sample rate 48   kHz*/
-    ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_96000HZ  = E_ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_96000HZ , /*!< Sample rate 96   kHz*/
-    ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_192000HZ = E_ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_192000HZ, /*!< Sample rate 192  kHz*/
-    ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_NONE     = E_ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE_NONE      /*!< Sample rate none    */
-}ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE;
-
-typedef struct ADI_A2B_HAL_ADAU1962A_CONFIG
-{
-    ADI_A2B_HAL_ADAU1962A_SAMPLE_RATE    eSampleRate;       /*!< ADAU1962A sampling rate   */
-}ADI_A2B_HAL_ADAU1962A_CONFIG;
 
 /*-------------- G P I O --------------*/
 
@@ -665,27 +591,6 @@ typedef struct ADI_A2B_HAL_ASRC_DEV_CONFIG
 /*======= P U B L I C P R O T O T Y P E S ========*/
 /* (globally-scoped functions) */
 
-/*-------------- S P O R T --------------*/
-
-ADI_A2B_HAL_SPORT_HANDLE adi_a2b_hal_sport_Open(uint8_t                                *pMemory,
-                                                uint32_t                               nMemSize,
-                                                ADI_A2B_HAL_SPORT_DEV_CONFIG           *pConfigSPORT);
-
-ADI_A2B_HAL_SPORT_STATUS adi_a2b_hal_sport_Close(ADI_A2B_HAL_SPORT_HANDLE              hDeviceSport);
-
-ADI_A2B_HAL_SPORT_STATUS adi_a2b_hal_sport_Enable(ADI_A2B_HAL_SPORT_HANDLE             hDeviceSport,
-                                                  bool                                 bEnable);
-
-ADI_A2B_HAL_SPORT_STATUS adi_a2b_hal_sport_ProcessBuffer(ADI_A2B_HAL_SPORT_HANDLE      hDeviceSport,
-                                                         void                          *pBuffer,
-                                                         uint32_t                      nBuffSizeInBytes);
-
-ADI_A2B_HAL_SPORT_STATUS adi_a2b_hal_sport_Process2DBuffer(ADI_A2B_HAL_SPORT_HANDLE    hDeviceSport,
-                                                           void                        *pBuffer,
-                                                           uint32_t                    nXCount,
-                                                           int32_t                     nXModify,
-                                                           uint32_t                    nYCount,
-                                                           int32_t                     nYModify);
 
 /*-------------- S P I --------------*/
 #if 0
@@ -703,19 +608,7 @@ ADI_A2B_HAL_SPI_STATUS adi_a2b_hal_spi_ReconfigRxDma(ADI_A2B_HAL_SPI_HANDLE pSPI
 ADI_A2B_HAL_PCG_HANDLE adi_a2b_hal_pcg_Open(ADI_A2B_HAL_PCG_DEVICE eDev, ADI_A2B_HAL_PCG_DEVCONFIG *pPCGConfig);
 ADI_A2B_HAL_PCG_STATUS adi_a2b_hal_pcg_Enable(ADI_A2B_HAL_PCG_HANDLE hDevicePcg);
 #endif /* #if 0 */
-/*-------------- A D A U 1 9 7 9 --------------*/
 
-ADI_A2B_HAL_ADAU1979_HANDLE adi_a2b_hal_adau1979_Open(uint32_t                          *pMemory,
-                                                      uint32_t                          nMemSize,
-                                                      ADI_A2B_HAL_ADAU1979_CONFIG       *pADAU1979Config);
-ADI_A2B_HAL_ADAU1979_STATUS adi_a2b_hal_adau1979_Enable(ADI_A2B_HAL_ADAU1979_HANDLE     hADAU1979);
-
-/*-------------- A D A U 1 9 6 2 A --------------*/
-
-ADI_A2B_HAL_ADAU1962A_HANDLE adi_a2b_hal_adau1962a_Open(uint32_t                        *pMemory,
-                                                        uint32_t                        nMemSize,
-                                                        ADI_A2B_HAL_ADAU1962A_CONFIG    *pADAU1962AConfig);
-ADI_A2B_HAL_ADAU1962A_STATUS adi_a2b_hal_adau1962a_Enable(ADI_A2B_HAL_ADAU1962A_HANDLE  hADAU1962A);
 
 /*-------------- G P I O --------------*/
 

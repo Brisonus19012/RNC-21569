@@ -141,8 +141,8 @@ static void adi_a2b_TWICallbackFunction(void* pCBParam, a2b_UInt32 Event, void* 
 static void adi_a2b_TWITimeoutHandler(ADI_A2B_TIMER_HANDLER_PTR pTWITimerHandlePtr);
 
 static void adi_a2b_DACTxCallback(void* pCommHandle, a2b_UInt32* pTxBufferPtr, a2b_UInt32 nChannel);
-static void adi_a2b_ADCRxCallback(void* pCommHandle, a2b_UInt32* pRxBufferPtr, a2b_UInt32 nChannel);
-static void adi_a2b_DownStreamTxCallback(void* pCommHandle, a2b_UInt32* pTxBufferPtr, a2b_UInt32 nChannel);
+//static void adi_a2b_ADCRxCallback(void* pCommHandle, a2b_UInt32* pRxBufferPtr, a2b_UInt32 nChannel);
+//static void adi_a2b_DownStreamTxCallback(void* pCommHandle, a2b_UInt32* pTxBufferPtr, a2b_UInt32 nChannel);
 static void adi_a2b_UpstreamRxCallback(void* pCommHandle, a2b_UInt32 pRxBufferPtr[], a2b_UInt32 nChannel);
 
 static void adi_a2b_upstreamToDwnRouting(ADI_A2B_SCOMM_HANDLER* pAudioRoutingHandle, a2b_UInt32 anDwnstreamBuffer[], a2b_UInt32 anUpstreamBuffer[][SPORT_BUFFER_SIZE], a2b_UInt32 nChannel );
@@ -921,7 +921,7 @@ a2b_HResult a2b_pal_AudioInitFunc(A2B_ECB* ecb)
 	pCodecRxSportConfig->eSportNum 				= ADI_A2B_HAL_SPORT_1;
 	pCodecRxSportConfig->nTDMCh 				= pAudioCommHandler->nCodecTDMSize;
 	pCodecRxSportConfig->eDirection 			= ADI_SPORT_DIR_RX;
-	pCodecRxSportConfig->pfSPORTCallBack 		= (ADI_A2B_SPORT_CB)&adi_a2b_ADCRxCallback;
+//	pCodecRxSportConfig->pfSPORTCallBack 		= (ADI_A2B_SPORT_CB)&adi_a2b_ADCRxCallback;
 	pCodecRxSportConfig->nStChnlNo 				= 0;
 	pCodecRxSportConfig->nEndChnlNo 			= 7U;
 	pCodecRxSportConfig->eSportHalf 			= ADI_HALF_SPORT_A;
@@ -929,7 +929,7 @@ a2b_HResult a2b_pal_AudioInitFunc(A2B_ECB* ecb)
 	pCodecTxSportConfig->nMultChDelay  			= 1;
 	pCodecTxSportConfig->bActiveLowFrameSync 	= 0;
 	pCodecTxSportConfig->nSamplingRisingClkEdge = 0u;
-	pCodecTxSportConfig->eSportNum 				= ADI_A2B_HAL_SPORT_0;
+	pCodecTxSportConfig->eSportNum 				= ADI_A2B_HAL_SPORT_4;
 	pCodecTxSportConfig->nTDMCh 				= pAudioCommHandler->nCodecTDMSize;
 	pCodecTxSportConfig->eDirection 			= ADI_SPORT_DIR_TX;
 	pCodecTxSportConfig->pfSPORTCallBack 		= (ADI_A2B_SPORT_CB)&adi_a2b_DACTxCallback;
@@ -1102,7 +1102,7 @@ a2b_HResult a2b_pal_AudioConfigFunc(a2b_Handle hnd,
 	pAD24xxTxSportConfig->eSportNum 				= ADI_A2B_HAL_SPORT_3;
 	pAD24xxTxSportConfig->eDirection 				= ADI_SPORT_DIR_TX;
 	pAD24xxTxSportConfig->nTDMCh 					= pAudioCommHandler->nAD2410TDMSize;
-	pAD24xxTxSportConfig->pfSPORTCallBack 			= (ADI_A2B_SPORT_CB)&adi_a2b_DownStreamTxCallback;
+//	pAD24xxTxSportConfig->pfSPORTCallBack 			= (ADI_A2B_SPORT_CB)&adi_a2b_DownStreamTxCallback;
 	pAD24xxTxSportConfig->nStChnlNo 				= 0;
 	pAD24xxTxSportConfig->nEndChnlNo 				= (pAD24xxTxSportConfig->nTDMCh - 1);
 	pAD24xxTxSportConfig->eSportHalf 				= ADI_HALF_SPORT_A;
@@ -1129,9 +1129,11 @@ a2b_HResult a2b_pal_AudioConfigFunc(a2b_Handle hnd,
 */
     }
 
+    eResult = Sport_Init();
+
 //	eResult = adi_a2b_EnableAudioHost();
 
-	return 0;//(a2b_UInt32)eResult;
+	return (a2b_UInt32)eResult;
 }
 
 /****************************************************************************/

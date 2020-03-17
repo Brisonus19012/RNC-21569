@@ -18,8 +18,8 @@ to the terms of the associated Analog Devices License Agreement.
 /** @addtogroup SPORT_Driver SPORT Device Driver
  *  @{
  */
- 
- 
+
+
  /** @addtogroup SPORT_Driver_Static_Configuration SPORT Device Driver Static Configuration
  *  @{
 
@@ -28,7 +28,7 @@ to the terms of the associated Analog Devices License Agreement.
   has macros which can be configured through adi_sport_config_2156x.h file which by default is available
   with SPORT driver. Example project can maintain a copy of it locally for custom configuration.
 
-  Following configuration is done by default in the static configuration, 
+  Following configuration is done by default in the static configuration,
 
   SPORT 0A Instance : I2S mode -> Master Tx
   SPORT 0B Instance : I2S mode -> Slave Rx
@@ -38,9 +38,9 @@ to the terms of the associated Analog Devices License Agreement.
   All other sport instances are configured in reset values.
 
 */
- 
- 
- 
+
+
+
 #ifndef __ADI_SPORT_CONGIF_2156X_H__
 #define __ADI_SPORT_CONFIG_2156X_H__
 
@@ -55,7 +55,7 @@ to the terms of the associated Analog Devices License Agreement.
  **********************************************************************************************/
 
 /*!SPORT0A Instance*/
-#define ADI_SPORT0A_INSTANCE                     	1
+#define ADI_SPORT0A_INSTANCE                     	0
 
 /*! Selects the Data Type Formatting for Half-Sport's Data transfer.
  *  Configurable for DSP serial mode/Multi-channel(TDM)/Packed I2S mode.

@@ -52,6 +52,33 @@ and its licensors.
 /*============= D E F I N E S =============*/
 /*#define A2B_LOOP_BACKTEST*/
 
+void ProcessBuffers(int32_t* adcbuf,int32_t* dacbuf);
+/* Prepares descriptors for SPORT DMA */
+static void PrepareDescriptors (void);
+ADI_SPORT_RESULT Sport_Init(void);
+int32_t Sport_Stop(void);
+
+/* Count to track the number of callBacks for SPORT transfer */
+volatile uint8_t CallbackCount = 0;
+uint8_t InputReady = 0;
+
+/* Destination SPORT PDMA Lists */
+ADI_PDMA_DESC_LIST iDESC_LIST_1_SP4A;
+ADI_PDMA_DESC_LIST iDESC_LIST_2_SP4A;
+
+/* Source SPORT PDMA Lists */
+ADI_PDMA_DESC_LIST iSRC_LIST_1_SP0A;
+ADI_PDMA_DESC_LIST iSRC_LIST_2_SP0A;
+
+/* Memory required for SPORT */
+static uint8_t SPORTMemory4A[ADI_SPORT_MEMORY_SIZE];
+static uint8_t SPORTMemory0A[ADI_SPORT_MEMORY_SIZE];
+
+/* SPORT Handle */
+static ADI_SPORT_HANDLE hSPORTDev4ATx;//TX
+static ADI_SPORT_HANDLE hSPORTDev0ARx;//RX
+
+
 #define SDMODIFY (1U)                    /* Setting the Modify to 1*/
 #define CLKDIV   (2U)
 #define FSDIV    (512U)
@@ -66,8 +93,213 @@ static ADI_SPORT_BUFF_INFO oSportBuffInfo[NUM_SPORT_DEVICES];
 ADI_MEM_A2B_DATA_CRIT_NO_CACHE
 static ADI_SPORT_HANDLE hSPORT[NUM_SPORT_DEVICES]; 
 
-/*============= C O D E =============*/ 
+#pragma section("seg_l1_block1")
+ADI_CACHE_ALIGN int32_t int_SP4ABuffer1[DAC_BUFFER_SIZE];
+#pragma section("seg_l1_block1")
+ADI_CACHE_ALIGN int32_t int_SP4ABuffer2[DAC_BUFFER_SIZE];
+#pragma section("seg_l1_block1")
+ADI_CACHE_ALIGN int32_t int_SP0ABuffer1[A2B_BUFFER_SIZE];
+#pragma section("seg_l1_block1")
+ADI_CACHE_ALIGN int32_t int_SP0ABuffer2[A2B_BUFFER_SIZE];
 
+/*============= C O D E =============*/ 
+static void SPORTCallback(void *pAppHandle, uint32_t nEvent, void *pArg)
+{
+
+    switch (nEvent)                            /* CASEOF (event type) */
+    {
+        case ADI_SPORT_EVENT_RX_BUFFER_PROCESSED: /* CASE (buffer processed) */
+
+        		CallbackCount ++;
+        		InputReady = 1;
+
+        		if(CallbackCount==1)
+				{
+					ProcessBuffers(int_SP0ABuffer1,int_SP4ABuffer1);
+				}
+				if(CallbackCount==2)
+				{
+					ProcessBuffers(int_SP0ABuffer2,int_SP4ABuffer2);
+					CallbackCount = 0;
+				}
+
+        		break;
+        default:
+        	 break;
+    }
+
+}
+
+
+void ProcessBuffers(int32_t* adcbuf,int32_t* dacbuf)
+{
+
+	int  i;
+
+	for(i=0;i<7;i++)
+	{
+	   /*Copy ADC buffer to DAC buffer */
+/*	   dacbuf[8*i] = adcbuf[16*i];
+	   dacbuf[8*i+1] = adcbuf[16*i+1];
+	   dacbuf[8*i+2] = adcbuf[16*i+2];
+	   dacbuf[8*i+3] = adcbuf[16*i+3];
+	   dacbuf[8*i+4] = adcbuf[16*i+4];
+	   dacbuf[8*i+5] = adcbuf[16*i+5];
+	   dacbuf[8*i+6] = adcbuf[16*i+6];
+	   dacbuf[8*i+7] = adcbuf[16*i+7];*/
+		dacbuf[0+i] = 0;
+		dacbuf[8+i] = 111161<<8;
+		dacbuf[16+i] = 214748<<8;
+		dacbuf[24+i] = 303700<<8;
+		dacbuf[32+i] = 371955<<8;
+		dacbuf[40+i] = 414861<<8;
+		dacbuf[48+i] = 429496<<8;
+		dacbuf[56+i] = 414861<<8;
+		dacbuf[64+i] = 371955<<8;
+		dacbuf[72+i] = 303700<<8;
+		dacbuf[80+i] = 214748<<8;
+		dacbuf[88+i] = 111161<<8;
+		dacbuf[96+i] = 0;
+		dacbuf[104+i] = -111161<<8;
+		dacbuf[112+i] = -214748<<8;
+		dacbuf[120+i] = -303700<<8;
+		dacbuf[128+i] = -371955<<8;
+		dacbuf[136+i] = -414861<<8;
+		dacbuf[144+i] = -429496<<8;
+		dacbuf[152+i] = -414861<<8;
+		dacbuf[160+i] = -371955<<8;
+		dacbuf[168+i] = -303700<<8;
+		dacbuf[176+i] = -214748<<8;
+		dacbuf[184+i] = -111161<<8;
+
+	}
+
+}
+
+
+/*
+ * Prepares descriptors for Memory DMA copy.
+ *
+ * Parameters
+ *  None
+ *
+ * Returns
+ *  None
+ *
+ */
+
+static void PrepareDescriptors (void)
+{
+
+	iDESC_LIST_1_SP4A.pStartAddr	= (int *)int_SP4ABuffer1;
+	iDESC_LIST_1_SP4A.Config		= ENUM_DMA_CFG_XCNT_INT ;
+	iDESC_LIST_1_SP4A.XCount		= DAC_BUFFER_SIZE;
+	iDESC_LIST_1_SP4A.XModify		= 4;
+	iDESC_LIST_1_SP4A.YCount		= 0;
+	iDESC_LIST_1_SP4A.YModify		= 0;
+	iDESC_LIST_1_SP4A.pNxtDscp		= &iDESC_LIST_2_SP4A;
+
+	iDESC_LIST_2_SP4A.pStartAddr	= (int *)int_SP4ABuffer2;
+	iDESC_LIST_2_SP4A.Config		= ENUM_DMA_CFG_XCNT_INT ;
+	iDESC_LIST_2_SP4A.XCount		= DAC_BUFFER_SIZE;
+	iDESC_LIST_2_SP4A.XModify		= 4;
+	iDESC_LIST_2_SP4A.YCount		= 0;
+	iDESC_LIST_2_SP4A.YModify		= 0;
+	iDESC_LIST_2_SP4A.pNxtDscp		= &iDESC_LIST_1_SP4A;
+
+	iSRC_LIST_1_SP0A.pStartAddr		=(int *)int_SP0ABuffer1;
+	iSRC_LIST_1_SP0A.Config			= ENUM_DMA_CFG_XCNT_INT ;
+	iSRC_LIST_1_SP0A.XCount			= A2B_BUFFER_SIZE;
+	iSRC_LIST_1_SP0A.XModify		= 4;
+	iSRC_LIST_1_SP0A.YCount			= 0;
+	iSRC_LIST_1_SP0A.YModify		= 0;
+	iSRC_LIST_1_SP0A.pNxtDscp		= &iSRC_LIST_2_SP0A;
+
+	iSRC_LIST_2_SP0A.pStartAddr		=(int *)int_SP0ABuffer2;
+	iSRC_LIST_2_SP0A.Config			= ENUM_DMA_CFG_XCNT_INT;
+	iSRC_LIST_2_SP0A.XCount			= A2B_BUFFER_SIZE;
+	iSRC_LIST_2_SP0A.XModify		= 4;
+	iSRC_LIST_2_SP0A.YCount			= 0;
+	iSRC_LIST_2_SP0A.YModify		= 0;
+	iSRC_LIST_2_SP0A.pNxtDscp		= &iSRC_LIST_1_SP0A;
+}
+
+ADI_SPORT_RESULT Sport_Init(void)
+{
+    /* SPORT return code */
+    ADI_SPORT_RESULT    eResult;
+
+	/* Open the SPORT Device 4A */
+	eResult = adi_sport_Open(SPORT_DEVICE_4A,ADI_HALF_SPORT_A,ADI_SPORT_DIR_TX, ADI_SPORT_MC_MODE, SPORTMemory4A,ADI_SPORT_MEMORY_SIZE,&hSPORTDev4ATx);
+
+	/* Configure the data,clock,frame sync and MCTL of SPORT Device 4A*/
+	eResult = adi_sport_ConfigData(hSPORTDev4ATx,ADI_SPORT_DTYPE_SIGN_FILL,31,false,false,false);
+
+	eResult = adi_sport_ConfigClock(hSPORTDev4ATx,100,false,true,false);
+
+	eResult = adi_sport_ConfigFrameSync(hSPORTDev4ATx,0,false,false,false,true,false,true);
+
+	eResult = adi_sport_ConfigMC(hSPORTDev4ATx,1u,7u,0u,true);
+
+	eResult = adi_sport_SelectChannel(hSPORTDev4ATx,0u,7u);
+
+	/* Open the SPORT Device 0A*/
+	eResult = adi_sport_Open(SPORT_DEVICE_0A,ADI_HALF_SPORT_A,ADI_SPORT_DIR_RX, ADI_SPORT_MC_MODE, SPORTMemory0A,ADI_SPORT_MEMORY_SIZE,&hSPORTDev0ARx);
+
+	/* Configure the data,clock,frame sync and MCTL of SPORT Device 0A*/
+	eResult = adi_sport_ConfigData(hSPORTDev0ARx,ADI_SPORT_DTYPE_SIGN_FILL,31,false,false,false);
+
+	eResult = adi_sport_ConfigClock(hSPORTDev0ARx,100,false,true,false);
+
+	eResult = adi_sport_ConfigFrameSync(hSPORTDev0ARx,0,false,false,false,false,false,true);
+
+	eResult = adi_sport_ConfigMC(hSPORTDev0ARx,0u,15u,0u,false);
+
+	eResult = adi_sport_SelectChannel(hSPORTDev0ARx,0u,15u);
+
+	eResult = adi_sport_RegisterCallback(hSPORTDev0ARx,SPORTCallback,NULL);
+
+	/* Prepare descriptors */
+	PrepareDescriptors();
+
+	/* Submit the first buffer for Rx.  */
+	eResult = adi_sport_DMATransfer(hSPORTDev0ARx,&iSRC_LIST_1_SP0A,(DMA_NUM_DESC),ADI_PDMA_DESCRIPTOR_LIST, ADI_SPORT_CHANNEL_PRIM);
+
+	/* Submit the first buffer for Tx.  */
+	eResult = adi_sport_DMATransfer(hSPORTDev4ATx,&iDESC_LIST_1_SP4A,(DMA_NUM_DESC),ADI_PDMA_DESCRIPTOR_LIST, ADI_SPORT_CHANNEL_PRIM);
+
+	/*Enable the Sport Device 0A */
+	eResult = adi_sport_Enable(hSPORTDev0ARx,true);
+
+	/*Enable the Sport Device 4A */
+	eResult = adi_sport_Enable(hSPORTDev4ATx,true);
+
+	return eResult;
+
+}
+
+int32_t Sport_Stop(void)
+{
+    /* SPORT return code */
+    ADI_SPORT_RESULT    eResult;
+
+    /*Stop the DMA transfer of Tx sport group */
+	eResult = adi_sport_StopDMATransfer(hSPORTDev4ATx);
+	CHECK_RESULT(eResult);
+
+	/*Stop the DMA transfer of Rx sport group*/
+	eResult = adi_sport_StopDMATransfer(hSPORTDev0ARx);
+	CHECK_RESULT(eResult);
+
+	/*Close Sport Device 4B */
+	eResult = adi_sport_Close(hSPORTDev0ARx);
+	CHECK_RESULT(eResult);
+	/*Close Sport Device 4A */
+	eResult = adi_sport_Close(hSPORTDev4ATx);
+	CHECK_RESULT(eResult);
+
+	return eResult;
+}
 /*
 ** Function Prototype section
 ** (static-scoped functions)

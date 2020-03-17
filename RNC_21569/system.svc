@@ -110,7 +110,7 @@ It provides information needed to link your code. It can be used to configure me
 					<register name="pREG_DAI0_PBEN2">0x1a5545d6</register>
 					<register name="pREG_DAI0_PBEN0">0x0e0412ca</register>
 					<register name="pREG_DAI0_PBEN3">0x1d71f79b</register>
-					<register name="pREG_DAI1_CLK0">0x252630c2</register>
+					<register name="pREG_DAI1_CLK0">0x252630c4</register>
 					<register name="pREG_DAI1_CLK1">0x3def7bde</register>
 					<register name="pREG_DAI1_CLK2">0x3def7bde</register>
 					<register name="pREG_DAI1_CLK3">0x3def7bde</register>
@@ -131,14 +131,14 @@ It provides information needed to link your code. It can be used to configure me
 					<register name="pREG_DAI1_PIN4">0x05694f9e</register>
 					<register name="pREG_DAI1_PIN2">0x03668c98</register>
 					<register name="pREG_DAI1_PIN3">0x03a714a3</register>
-					<register name="pREG_DAI1_PIN0">0x074e0a94</register>
-					<register name="pREG_DAI1_PIN1">0x04e84b96</register>
+					<register name="pREG_DAI1_PIN0">0x04df8a94</register>
+					<register name="pREG_DAI1_PIN1">0x04e84ba0</register>
 					<register name="pREG_DAI1_MISC1">0x3def7bde</register>
 					<register name="pREG_DAI1_MISC0">0x3def7bde</register>
 					<register name="pREG_DAI1_PBEN3">0x1d71f79b</register>
 					<register name="pREG_DAI1_PBEN2">0x1a5545d6</register>
 					<register name="pREG_DAI1_PBEN1">0x1348d30f</register>
-					<register name="pREG_DAI1_PBEN0">0x0e2482ca</register>
+					<register name="pREG_DAI1_PBEN0">0x082402ca</register>
 				</sru-register-group>
 				<comments/>
 			</sruConfiguration>

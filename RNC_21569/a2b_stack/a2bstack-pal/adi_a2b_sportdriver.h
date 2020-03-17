@@ -24,6 +24,32 @@ and its licensors.
 #include <drivers/sport/adi_sport.h>            /*!< ADI SPORT(Serial Port) Device driver definitions include file */
 #include "adi_a2b_hal.h"
 /*============== D E F I N E S ===============*/ 
+
+#define SAMPLE_RATE   			        (48000u)       /* DAC sample rate */
+
+#define REFERENCE_FREQ 				    (2000u)
+#define SAMPLES_PER_PERIOD 			    (SAMPLE_RATE) / (REFERENCE_FREQ)
+#define SAMPLE_SIZE 				    (4u)
+
+#define RxNUM_CHANNELS				    (16u)
+#define TxNUM_CHANNELS				    (8u)
+
+/* Macro to set buffer size */
+#define A2B_BUFFER_SIZE 	            (SAMPLES_PER_PERIOD * RxNUM_CHANNELS)
+#define DAC_BUFFER_SIZE 	            (SAMPLES_PER_PERIOD * TxNUM_CHANNELS)
+
+#define SPORT_DEVICE_4A 			    4u			/* SPORT device number */
+#define SPORT_DEVICE_0A 			    0u			/* SPORT device number */
+
+#define DMA_NUM_DESC 				    2u
+
+#define CHECK_RESULT(Result) \
+        if(eResult != 0)\
+		{\
+			return (1);\
+        }
+
+
 /*! The DIV factor for CLKD */
 #define DIVCLKD 2
 /*! The DIV factor for CLKA */
@@ -31,17 +57,6 @@ and its licensors.
 /*! The DIV factor for Frame Synch */
 #define DIVFSA  512
 
-
-#define SPORT_TCB_SIZE			                        (4U)        /* TCB Buf Size */
-#define CHAIN_POINTER_OFFSET	                        (0U)        /* Offset for CP Register in TCB */
-#define INTERNAL_COUNT_OFFSET	                        (1U)        /* Offset for Count Register in TCB */
-#define INTERNAL_MOD_OFFSET		                        (2U)        /* Offset for Modifier Register in TCB */
-#define INTEXT_INDEX_OFFSET		                        (3U)        /* Offset for Index Register in TCB */
-
-#define ENUM_SPORT_PAIR_0_1		                        (0U)        /* Enum value for SPORT 0 and 1 */
-#define ENUM_SPORT_PAIR_2_3		                        (2U)        /* Enum value for SPORT 2 and 3 */
-#define ENUM_SPORT_PAIR_4_5		                        (4U)        /* Enum value for SPORT 4 and 5 */
-#define ENUM_SPORT_PAIR_6_7		                        (6U)        /* Enum value for SPORT 6 and 7 */
 
 #define SPORT_BUFFER_SIZE		                        (24U)		 /* Number of SPORT i/o samples per channel */
 
@@ -54,7 +69,7 @@ and its licensors.
 #define ENUM_SPORT_SUCCESS					             (0U)        /*!< Enumeration for SPORT operation Success */
 #define ENUM_SPORT_FAILED					             (1U)        /*!< Enumeration for SPORT operation Failure */
 
-#define NUM_SPORT_DEVICES					             (4U)        /*!< Number of SPORT Devices */
+#define NUM_SPORT_DEVICES					             (8U)        /*!< Number of SPORT Devices */
 
 #define ADI_A2B_HAL_SPORT_CONFIGDATA_WORDLEN_8           (7U)        /*!< Word Length of 8 bytes                       */
 #define ADI_A2B_HAL_SPORT_CONFIGDATA_WORDLEN_16          (15U)       /*!< Word Length of 16 bytes                      */
@@ -131,9 +146,9 @@ and its licensors.
 extern "C" { 
 #endif /* __cplusplus */ 
 
-typedef void* ADI_SPORT_HANDLE;
+//typedef void* ADI_SPORT_HANDLE;
 typedef void (*ADI_A2B_SPORT_CB)(void* pCommHandle, uint32 pBuf[], uint32 nSz);
-typedef void *tSPORTCBParam;                                   /*!< Type define for SPORT CallBack parameter */
+//typedef void *tSPORTCBParam;                                   /*!< Type define for SPORT CallBack parameter */
 
 /*! \struct ADI_SPORT_CONFIG
     SPORT Configuration for a SPORT Pair (Rx and Tx)
@@ -199,6 +214,10 @@ void adi_a2b_DeInitPCGForCodec(void);
 void adi_a2b_DeInitPCGForAD24xx (void);
 void adi_RxSPORT_ISR(void *pCBParam, uint32 Event, void  *pArg);
 void adi_TxSPORT_ISR(void *pCBParam, uint32 Event, void  *pArg);
+
+extern ADI_SPORT_RESULT Sport_Init(void);
+extern int32_t Sport_Stop(void);
+
 #ifdef __cplusplus 
 } 
 #endif /* __cplusplus */ 
