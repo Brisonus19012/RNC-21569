@@ -31,7 +31,7 @@ and its licensors.
 #define SAMPLES_PER_PERIOD 			    (SAMPLE_RATE) / (REFERENCE_FREQ)
 #define SAMPLE_SIZE 				    (4u)
 
-#define RxNUM_CHANNELS				    (16u)
+#define RxNUM_CHANNELS				    (20u)
 #define TxNUM_CHANNELS				    (8u)
 
 /* Macro to set buffer size */

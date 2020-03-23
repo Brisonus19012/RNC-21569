@@ -34,6 +34,7 @@ and its licensors.
 #include "adi_a2b_sys.h"
 #include "adi_a2b_sportdriver.h"
 #include <services/spu/adi_spu.h>
+#include <services/pcg/adi_pcg.h>
 
 
 #if A2B_PRINT_FOR_DEBUG
@@ -42,6 +43,8 @@ and its licensors.
 /*============= D E F I N E S =============*/
 
 static int SPU_init(void);
+uint32_t    PcgInit(void);            /* Initialize PCG */
+
 
 /*============= D A T A =============*/
 
@@ -49,6 +52,10 @@ uint8 aSysMemBuf[ADI_A2B_SYS_MEMSIZE_BYTES];
 
 static ADI_SPU_HANDLE      ghSpu;                         /* SPU handle */
 uint8_t                    SpuMemory[ADI_SPU_MEMORY_SIZE];/* Memory required for the SPU operation */
+
+uint8_t PcgMemory[ADI_PCG_MEMORY_SIZE];                   /* PCG - A */
+static ADI_PCG_HANDLE phPcg;
+
 
 #define SPORT_0A_SPU  			        13
 #define SPORT_4A_SPU  			        21
@@ -113,6 +120,68 @@ int SPU_init(void)
 
 }
 
+/*
+ * Opens and initializes PCG Device.
+ *
+ * Parameters
+ *  None
+ *
+ * Returns
+ *  0 if success, other values for error
+ *
+ */
+uint32_t PcgInit(void)
+{
+    uint32_t Result = 0u;
+    uint32_t DeviceNum;
+
+    DeviceNum = 0u; /* PCG A */
+
+    /* Open PCG */
+    if( adi_pcg_Open(DeviceNum, &PcgMemory[0], ADI_PCG_MEMORY_SIZE, &phPcg) != ADI_PCG_SUCCESS)
+    {
+        Result = 1u;
+    }
+
+    /* Select FS and clock outputs for PCG */
+    if((uint32_t)adi_pcg_SelectOutput(phPcg, ADI_PCG_OUT_CLK_FS) != 0u)
+    {
+        /* return error */
+        return 1u;
+    }
+
+    /* Set the PCG input clock source to external*/
+    if((uint32_t)adi_pcg_EnableClkPll(phPcg, true) != 0u)
+    {
+        /* return error */
+        return 1u;
+    }
+
+    /* Set the PCG input fs to external */
+    if((uint32_t)adi_pcg_EnableFsPll(phPcg, true) != 0u)
+    {
+        /* return error */
+        return 1u;
+    }
+
+    /* Clock A 36.864 MHz */
+    if((uint32_t)adi_pcg_ClockDivide(phPcg, 0x4) != 0u)
+    {
+        /* return error */
+        return 1u;
+    }
+    /* FS A 48 kHz */
+    if((uint32_t)adi_pcg_FrameSyncDivide(phPcg, 0xa00) != 0u)
+    {
+        /* return error */
+        return 1u;
+    }
+
+    Result = (uint32_t)adi_pcg_Enable(phPcg, true);
+
+    return Result;
+}
+
  
 /********************************************************************************/
 /*!
@@ -135,7 +204,13 @@ a2b_HResult adi_a2b_SystemInit(void)
     ADI_A2B_SYS_RESULT	eSysResult;
     int                 sResult;
 
-    adi_a2b_InitPCGForAD24xx(16u);
+//    adi_a2b_InitPCGForAD24xx(16u);
+    sResult = PcgInit();
+    if(sResult != 0)
+	{
+		eResult = ADI_A2B_FAILURE;
+	}
+
 
 	oA2bSysConfig.bProcMaster = true;
 

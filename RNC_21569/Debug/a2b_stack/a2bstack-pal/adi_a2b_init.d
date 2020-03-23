@@ -66,3 +66,5 @@ a2b_stack/a2bstack-pal/adi_a2b_init.doj: ../system/services/pdma/adi_pdma_config
 a2b_stack/a2bstack-pal/adi_a2b_init.doj: ../system/drivers/sport/adi_sport_config_2156x.h
 a2b_stack/a2bstack-pal/adi_a2b_init.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/services/spu/adi_spu.h
 a2b_stack/a2bstack-pal/adi_a2b_init.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/services/spu/adi_spu_v3.h
+a2b_stack/a2bstack-pal/adi_a2b_init.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/services/pcg/adi_pcg.h
+a2b_stack/a2bstack-pal/adi_a2b_init.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/services/pcg/adi_pcg_v1.h

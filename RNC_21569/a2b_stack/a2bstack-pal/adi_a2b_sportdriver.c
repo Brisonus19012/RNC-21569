@@ -136,18 +136,18 @@ void ProcessBuffers(int32_t* adcbuf,int32_t* dacbuf)
 
 	int  i;
 
-	for(i=0;i<7;i++)
+	for(i=0;i<24;i++)
 	{
 	   /*Copy ADC buffer to DAC buffer */
-/*	   dacbuf[8*i] = adcbuf[16*i];
-	   dacbuf[8*i+1] = adcbuf[16*i+1];
-	   dacbuf[8*i+2] = adcbuf[16*i+2];
-	   dacbuf[8*i+3] = adcbuf[16*i+3];
-	   dacbuf[8*i+4] = adcbuf[16*i+4];
-	   dacbuf[8*i+5] = adcbuf[16*i+5];
-	   dacbuf[8*i+6] = adcbuf[16*i+6];
-	   dacbuf[8*i+7] = adcbuf[16*i+7];*/
-		dacbuf[0+i] = 0;
+	   dacbuf[8*i] = adcbuf[20*i];
+	   dacbuf[8*i+1] = adcbuf[20*i+1];
+	   dacbuf[8*i+2] = adcbuf[20*i+2];
+	   dacbuf[8*i+3] = adcbuf[20*i+3];
+	   dacbuf[8*i+4] = adcbuf[20*i+4];
+	   dacbuf[8*i+5] = adcbuf[20*i+5];
+	   dacbuf[8*i+6] = adcbuf[20*i+6];
+	   dacbuf[8*i+7] = adcbuf[20*i+7];
+/*		dacbuf[0+i] = 0;
 		dacbuf[8+i] = 111161<<8;
 		dacbuf[16+i] = 214748<<8;
 		dacbuf[24+i] = 303700<<8;
@@ -170,7 +170,7 @@ void ProcessBuffers(int32_t* adcbuf,int32_t* dacbuf)
 		dacbuf[160+i] = -371955<<8;
 		dacbuf[168+i] = -303700<<8;
 		dacbuf[176+i] = -214748<<8;
-		dacbuf[184+i] = -111161<<8;
+		dacbuf[184+i] = -111161<<8;*/
 
 	}
 
@@ -239,7 +239,7 @@ ADI_SPORT_RESULT Sport_Init(void)
 
 	eResult = adi_sport_ConfigFrameSync(hSPORTDev4ATx,0,false,false,false,true,false,true);
 
-	eResult = adi_sport_ConfigMC(hSPORTDev4ATx,1u,7u,0u,true);
+	eResult = adi_sport_ConfigMC(hSPORTDev4ATx,1u,7u,0u,false);
 
 	eResult = adi_sport_SelectChannel(hSPORTDev4ATx,0u,7u);
 
@@ -249,13 +249,13 @@ ADI_SPORT_RESULT Sport_Init(void)
 	/* Configure the data,clock,frame sync and MCTL of SPORT Device 0A*/
 	eResult = adi_sport_ConfigData(hSPORTDev0ARx,ADI_SPORT_DTYPE_SIGN_FILL,31,false,false,false);
 
-	eResult = adi_sport_ConfigClock(hSPORTDev0ARx,100,false,true,false);
+	eResult = adi_sport_ConfigClock(hSPORTDev0ARx,100,false,false,false);
 
-	eResult = adi_sport_ConfigFrameSync(hSPORTDev0ARx,0,false,false,false,false,false,true);
+	eResult = adi_sport_ConfigFrameSync(hSPORTDev0ARx,0,false,false,false,true,false,true);
 
-	eResult = adi_sport_ConfigMC(hSPORTDev0ARx,0u,15u,0u,false);
+	eResult = adi_sport_ConfigMC(hSPORTDev0ARx,1u,19u,0u,false);
 
-	eResult = adi_sport_SelectChannel(hSPORTDev0ARx,0u,15u);
+	eResult = adi_sport_SelectChannel(hSPORTDev0ARx,0u,19u);
 
 	eResult = adi_sport_RegisterCallback(hSPORTDev0ARx,SPORTCallback,NULL);
 
@@ -700,8 +700,8 @@ Note: Current configuration - 12.288MHz, SYNC -48K
 
 void adi_a2b_InitPCGForCodec(void)
 {
-  	*pREG_PCG0_CTLB1 |= (uint32)DIVCLKD | (2U<<20U);
-	*pREG_PCG0_CTLB0 |= (uint32)DIVFSA | (BITM_PCG_CTLA0_CLKEN) | (uint32)(BITM_PCG_CTLA0_FSEN);
+  	*pREG_PCG0_CTLC1 |= (uint32)DIVCLKD | (2U<<20U);
+	*pREG_PCG0_CTLC0 |= (uint32)DIVFSA | (BITM_PCG_CTLA0_CLKEN) | (uint32)(BITM_PCG_CTLA0_FSEN);
 
 }
 

@@ -31,6 +31,7 @@ extern void ConfigSoftSwitches_ADAU_Reset(void);
 void Switch_Configurator(void);
 void SRU_Init(void);
 
+
 /*
  * Prepares Switch configuration.
  *
@@ -78,18 +79,22 @@ void Switch_Configurator()
  */
 void SRU_Init()
 {
-	*pREG_PADS0_DAI0_IE=0x1ffffe;
+	*pREG_PADS0_DAI0_IE=0x1fffff;
 	*pREG_PADS0_DAI1_IE=0x1ffffe;
 
-    SRU2(LOW,DAI1_PBEN05_I);
-    SRU2(DAI1_PB05_O,SPT4_ACLK_I); /*DAC clock to SPORT 4A*/
-    SRU2(DAI1_PB04_O,SPT4_AFS_I);  /*DAC FS to SPORT 4A*/
-    SRU2(LOW,DAI1_PBEN04_I);       /* DAI1_PBEN04 set as input */
-    SRU2(SPT4_AD0_O,DAI1_PB01_I); /* SPORT 4A to DAC*/
-    SRU2(HIGH,DAI1_PBEN01_I);
+    SRU2(HIGH,DAI1_PBEN05_I);        /* DAI1_PBEN05 set as input  */
+    SRU2(HIGH,DAI1_PBEN04_I);        /* DAI1_PBEN04 set as input  */
+    SRU2(DAI1_PB05_O,SPT4_ACLK_I);  /* DAC clock to SPORT 4A     */
+    SRU2(DAI1_PB04_O,SPT4_AFS_I);   /* DAC FS to SPORT 4A        */
 
+    SRU2(SPT4_AD0_O,DAI1_PB01_I);   /* SPORT 4A to DAC           */
+    SRU2(HIGH,DAI1_PBEN01_I);       /* DAI1_PBEN01 set as output */
+
+    SRU(DAI0_PB03_O, SPT0_ACLK_I);  /* PCGA to SPORT0 CLK (CLK)  */
+	SRU(DAI0_PB04_O, SPT0_AFS_I);   /* PCGA to SPORT1 FS (FS)    */
+
+	SRU(DAI0_PB01_O,SPT0_AD0_I);    /* A2B digital to SPORT 0A  */
     SRU(LOW,DAI0_PBEN01_I);
-	SRU(DAI0_PB01_O,SPT0_AD0_I); /* SPORT 4A to DAC*/
 
 }
 
@@ -131,11 +136,6 @@ void main(int argc, char *argv[])
 		assert(Result == 0);        // failed to setup A2B network
 	}
 
-	/* SPORT Initialization */
-	if (Result==0u)
-	{
-//		Result=Sport_Init();
-	}
 
 	while(1)
 	{

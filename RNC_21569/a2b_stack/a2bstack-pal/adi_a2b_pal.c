@@ -1108,7 +1108,7 @@ a2b_HResult a2b_pal_AudioConfigFunc(a2b_Handle hnd,
 	pAD24xxTxSportConfig->eSportHalf 				= ADI_HALF_SPORT_A;
 
 	/* Configure AD2410 SPORT */
-    adi_a2b_InitPCGForAD24xx(pAudioCommHandler->nAD2410TDMSize);
+//    adi_a2b_InitPCGForAD24xx(pAudioCommHandler->nAD2410TDMSize);
 
     if(bA2BSportOpen == false)
     {

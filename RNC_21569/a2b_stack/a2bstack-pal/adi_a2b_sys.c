@@ -83,7 +83,7 @@ struct Config_Table Config_array_DAC[28] = {
 		   	    {     ADAU1962_PDN_CTRL_2,	    0xff},
 		   	    {     ADAU1962_PDN_CTRL_3,	    0x0f},
 		   	    {     ADAU1962_DAC_CTRL0,		0x19},  /* TDM8,48khz */
-		   	    {     ADAU1962_DAC_CTRL1,		0x23},  /* DLRCLK/DBCLK as Master,latch data in DBCLK falling edge */
+		   	    {     ADAU1962_DAC_CTRL1,		0x22},  /* DLRCLK/DBCLK as Master,latch data in DBCLK falling edge */
 		   	    {     ADAU1962_DAC_CTRL2,		0x00},
 		   	    {     ADAU1962_DAC_MUTE1,	    0x0},
 		   	    {     ADAU1962_DAC_MUTE2,	    0x00},
@@ -357,13 +357,13 @@ static int ADAU_1962_Pllinit(void)
 		REPORT_ERROR("TWI Set Hw address failed 0x%08X\n", eResult);
 	}
 
-	Write_TWI_8bit_Reg( ADAU1962_PLL_CTL_CTRL0, 0x01 );
+	Write_TWI_8bit_Reg( ADAU1962_PLL_CTL_CTRL0, 0x41 );
 	while(delay1--)
 	{
 		asm("nop;");
 	}
 
-	Write_TWI_8bit_Reg( ADAU1962_PLL_CTL_CTRL0, 0x05 );
+	Write_TWI_8bit_Reg( ADAU1962_PLL_CTL_CTRL0, 0x45 );
 
 	delay1 = 0xffff;
 	while(delay1--)
@@ -371,7 +371,7 @@ static int ADAU_1962_Pllinit(void)
 		asm("nop;");
 	}
 
-	Write_TWI_8bit_Reg( ADAU1962_PLL_CTL_CTRL1, 0x22 );
+	Write_TWI_8bit_Reg( ADAU1962_PLL_CTL_CTRL1, 0x2a );
 	delay1 = 0xffff;
 	while(delay1--)
 	{
