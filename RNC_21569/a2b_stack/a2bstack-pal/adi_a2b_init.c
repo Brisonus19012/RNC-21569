@@ -206,6 +206,7 @@ a2b_HResult adi_a2b_SystemInit(void)
 
 //    adi_a2b_InitPCGForAD24xx(16u);
     sResult = PcgInit();
+
     if(sResult != 0)
 	{
 		eResult = ADI_A2B_FAILURE;

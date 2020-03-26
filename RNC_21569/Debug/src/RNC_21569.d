@@ -29,7 +29,6 @@ src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio
 src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/stdbool.h
 src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/builtins.h
 src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/builtins_support.h
-src/RNC_21569.doj: ../system/adi_initialize.h
 src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/services/int/adi_int.h
 src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/services/int/adi_int_id.h
 src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/interrupt.h
@@ -46,12 +45,13 @@ src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio
 src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/services/pdma/adi_pdma_2156x.h
 src/RNC_21569.doj: ../system/services/pdma/adi_pdma_config_2156x.h
 src/RNC_21569.doj: ../system/drivers/sport/adi_sport_config_2156x.h
+src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/SRU.h
+src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sru21569.h
+src/RNC_21569.doj: ../system/adi_initialize.h
 src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/math.h
 src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/math_21xxx.h
 src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/builtins.h
 src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sys/builtins_support.h
-src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/SRU.h
-src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/sru21569.h
 src/RNC_21569.doj: ../src/RNC_21569.h
 src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/services/pwr/adi_pwr.h
 src/RNC_21569.doj: ../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.1/SHARC/include/services/pwr/adi_pwr_2156x.h

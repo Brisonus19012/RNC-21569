@@ -232,7 +232,7 @@ uint32_t adi_a2b_TwiClose(a2b_Handle hA2bTwiHandle)
     }
     else
     {
-    	eTwiResult=nResult;
+    	eTwiResult = nResult;
     }
 
 

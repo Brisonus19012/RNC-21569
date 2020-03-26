@@ -74,140 +74,140 @@ C_DEPS += \
 a2b_stack/a2bstack-gen/a2bstack/src/audio.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/audio.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/audio.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/audio.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/diag.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/diag.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/diag.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/diag.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/gpio.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/gpio.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/gpio.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/gpio.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/i2c.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/i2c.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/i2c.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/i2c.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/interrupt.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/interrupt.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/interrupt.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/interrupt.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/jobexec.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/jobexec.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/jobexec.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/jobexec.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/memmgr.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/memmgr.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/memmgr.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/memmgr.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/msg.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/msg.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/msg.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/msg.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/msgrtr.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/msgrtr.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/msgrtr.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/msgrtr.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/pool.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/pool.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/pool.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/pool.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/seqchart.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/seqchart.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/seqchart.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/seqchart.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/stack.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/stack.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/stack.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/stack.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/stackctx.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/stackctx.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/stackctx.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/stackctx.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/stackctxmailbox.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/stackctxmailbox.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/stackctxmailbox.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/stackctxmailbox.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/stackinfo.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/stackinfo.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/stackinfo.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/stackinfo.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/stringbuffer.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/stringbuffer.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/stringbuffer.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/stringbuffer.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/system.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/system.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/system.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/system.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/timer.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/timer.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/timer.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/timer.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/trace.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/trace.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/trace.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/trace.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bstack/src/util.doj: ../a2b_stack/a2bstack-gen/a2bstack/src/util.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/util.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bstack/src/util.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

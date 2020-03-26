@@ -69,7 +69,7 @@ and its licensors.
 #define ENUM_SPORT_SUCCESS					             (0U)        /*!< Enumeration for SPORT operation Success */
 #define ENUM_SPORT_FAILED					             (1U)        /*!< Enumeration for SPORT operation Failure */
 
-#define NUM_SPORT_DEVICES					             (8U)        /*!< Number of SPORT Devices */
+#define NUM_SPORT_DEVICES					             (2U)        /*!< Number of SPORT Devices */
 
 #define ADI_A2B_HAL_SPORT_CONFIGDATA_WORDLEN_8           (7U)        /*!< Word Length of 8 bytes                       */
 #define ADI_A2B_HAL_SPORT_CONFIGDATA_WORDLEN_16          (15U)       /*!< Word Length of 16 bytes                      */
@@ -137,8 +137,8 @@ and its licensors.
 #define ADI_A2B_HAL_SPORT_TDM_CH_2						 (1U)		 /*!< SPORT TDM channels = Actual TDM slots - 1    */
 #define ADI_A2B_HAL_SPORT_TDM_CH_8						 (7U)		 /*!< SPORT TDM channels = Actual TDM slots - 1    */
 
-#define MAX_NUM_INPUT_ANALOG_CHANNELS					 (16U)        /*!< Max num Input Channels */
-#define MAX_NUM_OUTPUT_ANALOG_CHANNELS	    			 (16U)        /*!< Max num Output Channels */
+#define MAX_NUM_INPUT_ANALOG_CHANNELS					 (20U)        /*!< Max num Input Channels */
+#define MAX_NUM_OUTPUT_ANALOG_CHANNELS	    			 (8U)        /*!< Max num Output Channels */
 
 /*============= D A T A  T Y P E S =============*/ 
 
@@ -174,8 +174,7 @@ typedef struct ADI_SPORT_CONFIG
 */
 typedef struct ADI_SPORT_INFO
 {
-ADI_A2B_DATA_MEM_ALIGN4
-	uint32                    aSportBuff[MAX_NUM_CHANNELS * SPORT_BUFFER_SIZE * NUM_INPUT_SPORT_BUFFERS];
+
 ADI_A2B_DATA_MEM_ALIGN4
     uint8                     aSPORTMem[ADI_SPORT_MEMORY_SIZE];  /*!< Buffer of size "ADI_SPORT_DMA_MEMORY_SIZE" bytes for SPORT device to work on. */
 	volatile uint8            nSportInterruptFlg; /*!< Flag to indicate the SPORT interrupt                         */
@@ -206,8 +205,10 @@ ADI_SPORT_RESULT adi_a2b_InputSerialPortEnable(uint32 nSportNum);
 ADI_SPORT_RESULT adi_a2b_sport_Close(uint8 nSportDeviceNo);
 ADI_SPORT_RESULT adi_a2b_SerialPortEnable(uint32 nSportDeviceNo, bool bEnable);
 ADI_SPORT_RESULT adi_a2b_sport_ProcessBuffer(ADI_SPORT_HANDLE hSPORT,
-		                                      void  *pBuffer,
-                                              uint32_t   nBuffSizeInBytes);
+											 ADI_PDMA_DESC_LIST *pDescriptorList,
+											 uint8_t          	 ucListSize,
+											 ADI_PDMA_MODE 		 ePDMAmode,
+											 ADI_SPORT_CHANNEL_ENABLE  eSportChEn);
 void adi_a2b_InitPCGForAD24xx(uint16 nTDMSize);
 void adi_a2b_InitPCGForCodec(void);
 void adi_a2b_DeInitPCGForCodec(void);
@@ -215,8 +216,7 @@ void adi_a2b_DeInitPCGForAD24xx (void);
 void adi_RxSPORT_ISR(void *pCBParam, uint32 Event, void  *pArg);
 void adi_TxSPORT_ISR(void *pCBParam, uint32 Event, void  *pArg);
 
-extern ADI_SPORT_RESULT Sport_Init(void);
-extern int32_t Sport_Stop(void);
+extern void process_audioBlocks(void);
 
 #ifdef __cplusplus 
 } 

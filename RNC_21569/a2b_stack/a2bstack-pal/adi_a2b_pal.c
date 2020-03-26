@@ -68,17 +68,15 @@ and its licensors.
 /*============= D E F I N E S =============*/
 
 /*! Maximum number application sub buffers */
-#define A2B_MAX_APPBUFFER			(4u)
+#define A2B_MAX_APPBUFFER			    (4u)
 
 /*! Use on board codec for audio */
-#define A2B_USE_CODEC				(1u)
+#define A2B_USE_CODEC				    (1u)
 
 /*! Bi directional SPORT to be used to communicate with AD2410 */
-#define A2B_AD24xx_RXSPORT			(0u)
-#define A2B_AD24xx_TXSPORT			(3u)
+#define A2B_AD24xx_RXSPORT			    (0u)
 
-/*! Bi directional SPORT to be used to communicate with AD2410 */
-#define A2B_CODEC_RXSPORT				(1u)
+/*! Bi directional SPORT to be used to communicate with 1962a */
 #define A2B_CODEC_TXSPORT				(4u)
 
 /*============= D A T A =============*/
@@ -112,17 +110,11 @@ typedef struct
 {
 	ADI_A2B_SCOMM_HANDLER oAudioCommHandler;
 	ADI_SPORT_PERI_CONFIG oAD24xxRxSportConfig;
-	ADI_SPORT_PERI_CONFIG oCodecRxSportConfig;
-	ADI_SPORT_PERI_CONFIG oAD24xxTxSportConfig;
 	ADI_SPORT_PERI_CONFIG oCodecTxSportConfig;
 }adi_a2b_audio;
 
 adi_a2b_audio goA2bAudio;
 
-/*! Upstream data processing buffer   */
-static a2b_UInt32 ganUpstreamProcessBuffer[A2B_MAX_APPBUFFER][MAX_NUM_INPUT_ANALOG_CHANNELS][SPORT_BUFFER_SIZE];
-/*! ADC data processing buffer   */
-static a2b_UInt32 ganADCProcessBuffer[A2B_MAX_APPBUFFER][MAX_NUM_INPUT_ANALOG_CHANNELS][SPORT_BUFFER_SIZE];
 
 /*============= C O D E =============*/
 /*
@@ -134,24 +126,15 @@ static ADI_SPORT_RESULT adi_a2b_EnableAudioHost(void);
 static a2b_UInt8 adi_a2b_TwiWriteComplete(a2b_UInt8 nTWIDeviceNo);
 static a2b_UInt8 adi_a2b_TwiReadComplete(a2b_UInt8 nTWIDeviceNo);
 static a2b_UInt32 adi_a2b_HandleError(a2b_UInt8 nTWIDeviceNo ,  a2b_UInt8 bComplete );
-
 static void adi_a2b_TimerCallback(ADI_A2B_TIMER_HANDLER_PTR pTimerHandle);
 
 static void adi_a2b_TWICallbackFunction(void* pCBParam, a2b_UInt32 Event, void* pArg);
 static void adi_a2b_TWITimeoutHandler(ADI_A2B_TIMER_HANDLER_PTR pTWITimerHandlePtr);
 
-static void adi_a2b_DACTxCallback(void* pCommHandle, a2b_UInt32* pTxBufferPtr, a2b_UInt32 nChannel);
-//static void adi_a2b_ADCRxCallback(void* pCommHandle, a2b_UInt32* pRxBufferPtr, a2b_UInt32 nChannel);
-//static void adi_a2b_DownStreamTxCallback(void* pCommHandle, a2b_UInt32* pTxBufferPtr, a2b_UInt32 nChannel);
-static void adi_a2b_UpstreamRxCallback(void* pCommHandle, a2b_UInt32 pRxBufferPtr[], a2b_UInt32 nChannel);
-
-static void adi_a2b_upstreamToDwnRouting(ADI_A2B_SCOMM_HANDLER* pAudioRoutingHandle, a2b_UInt32 anDwnstreamBuffer[], a2b_UInt32 anUpstreamBuffer[][SPORT_BUFFER_SIZE], a2b_UInt32 nChannel );
 #if A2B_USE_CODEC
-static void adi_a2b_ADCToDwnRouting(ADI_A2B_SCOMM_HANDLER* pAudioRoutingHandle, a2b_UInt32 anDwnstreamBuffer[], a2b_UInt32 anADCBuffer[][SPORT_BUFFER_SIZE], a2b_UInt32 nChannel );
 static void adi_a2b_UpstreamToDACRouting(ADI_A2B_SCOMM_HANDLER* pAudioRoutingHandle, a2b_UInt32 anDACBuffer[], a2b_UInt32 anUpstreamBuffer[][SPORT_BUFFER_SIZE], a2b_UInt32 nChannel );
-static void adi_a2b_ADCToDACRouting(ADI_A2B_SCOMM_HANDLER* pAudioRoutingHandle, a2b_UInt32 anDACBuffer[], a2b_UInt32 anADCBuffer[][SPORT_BUFFER_SIZE], a2b_UInt32 nChannel);
 #endif
-static void adi_a2b_DeInterleaveCopy( a2b_UInt32 anDesbuffer[][SPORT_BUFFER_SIZE], a2b_UInt32 anSrcBuffer[], a2b_UInt32 nChannel );
+
 /*
 ** Function Definition section
 */
@@ -875,7 +858,6 @@ a2b_HResult a2b_pal_AudioInitFunc(A2B_ECB* ecb)
 {
 	ADI_SPORT_RESULT 		eResult;
 	ADI_A2B_SCOMM_HANDLER 	*pAudioCommHandler;
-	ADI_SPORT_PERI_CONFIG 	*pCodecRxSportConfig;
 	ADI_SPORT_PERI_CONFIG 	*pCodecTxSportConfig;
 
 	a2b_UInt8 nReturn = 0xFFu;
@@ -892,49 +874,35 @@ a2b_HResult a2b_pal_AudioInitFunc(A2B_ECB* ecb)
 	 * This BCLK is used as external CLK for ADSP-BF716 SPORT's
 	 * */
 	for(nIndex  = 0u; nIndex < (a2b_UInt8)psPeriConfig->nNumConfig; nIndex++)
-	{//Configuring attach master peripheral ADAU1452 and ADAU1761
+	{
+		/* Configuring attach master peripheral ADAU1452 and ADAU1761 */
 		psDeviceConfig = &psPeriConfig->aDeviceConfig[nIndex];
 		//nReturn = (a2b_UInt8)adi_a2b_AudioHostConfig(ecb, psDeviceConfig);
 	}
 
 	pAudioCommHandler 		= &goA2bAudio.oAudioCommHandler;
-	pCodecRxSportConfig		= &goA2bAudio.oCodecRxSportConfig;
 	pCodecTxSportConfig		= &goA2bAudio.oCodecTxSportConfig;
 
 	/* Initialization */
 	pAudioCommHandler->pRoutingTable 			= gaAudioRoutingtab;
 	pAudioCommHandler->nWordLength 				= 32u;
 	pAudioCommHandler->nUpstrProcWriteIndex 	= 0u;
-	pAudioCommHandler->nADCProcWriteIndex 		= 0u;
-	pAudioCommHandler->nUpstrToDwnstrReadIndex 	= 1u;
-	pAudioCommHandler->nADCToDwnstrReadIndex 	= 2u;
-	pAudioCommHandler->nADCtoDACReadIndex 		= 1u;
 	pAudioCommHandler->nUpStrtoDACReadIndex 	= 2u;
 
 #if A2B_USE_CODEC
 	/* Opened as pair, bidirectional format */
 	pAudioCommHandler->nCodecTDMSize = 8u;
 
-	pCodecRxSportConfig->nMultChDelay  			= 1;
-	pCodecRxSportConfig->bActiveLowFrameSync 	= 0;
-	pCodecRxSportConfig->nSamplingRisingClkEdge = 0u;
-	pCodecRxSportConfig->eSportNum 				= ADI_A2B_HAL_SPORT_1;
-	pCodecRxSportConfig->nTDMCh 				= pAudioCommHandler->nCodecTDMSize;
-	pCodecRxSportConfig->eDirection 			= ADI_SPORT_DIR_RX;
-//	pCodecRxSportConfig->pfSPORTCallBack 		= (ADI_A2B_SPORT_CB)&adi_a2b_ADCRxCallback;
-	pCodecRxSportConfig->nStChnlNo 				= 0;
-	pCodecRxSportConfig->nEndChnlNo 			= 7U;
-	pCodecRxSportConfig->eSportHalf 			= ADI_HALF_SPORT_A;
 
-	pCodecTxSportConfig->nMultChDelay  			= 1;
-	pCodecTxSportConfig->bActiveLowFrameSync 	= 0;
+	pCodecTxSportConfig->nMultChDelay  			= 1u;
+	pCodecTxSportConfig->bActiveLowFrameSync 	= 1u;
 	pCodecTxSportConfig->nSamplingRisingClkEdge = 0u;
 	pCodecTxSportConfig->eSportNum 				= ADI_A2B_HAL_SPORT_4;
 	pCodecTxSportConfig->nTDMCh 				= pAudioCommHandler->nCodecTDMSize;
 	pCodecTxSportConfig->eDirection 			= ADI_SPORT_DIR_TX;
-	pCodecTxSportConfig->pfSPORTCallBack 		= (ADI_A2B_SPORT_CB)&adi_a2b_DACTxCallback;
-	pCodecTxSportConfig->nStChnlNo 				= 0;
-	pCodecTxSportConfig->nEndChnlNo 			= 7U;
+//	pCodecTxSportConfig->pfSPORTCallBack 		= (ADI_A2B_SPORT_CB)&adi_a2b_DACTxCallback;
+	pCodecTxSportConfig->nStChnlNo 				= 0u;
+	pCodecTxSportConfig->nEndChnlNo 			= 7u;
 	pCodecTxSportConfig->eSportHalf 			= ADI_HALF_SPORT_A;
 
     /* Configure Codec SPORT */
@@ -946,8 +914,7 @@ a2b_HResult a2b_pal_AudioInitFunc(A2B_ECB* ecb)
     	eResult = ADI_SPORT_FAILED;
     }
 
-//    eResult = adi_a2b_SerialPortOpen(A2B_CODEC_RXSPORT, pCodecRxSportConfig, (void*)pAudioCommHandler);
-//    eResult = adi_a2b_SerialPortOpen(A2B_CODEC_TXSPORT, pCodecTxSportConfig, (void*)pAudioCommHandler);
+    eResult = adi_a2b_SerialPortOpen(A2B_CODEC_TXSPORT, pCodecTxSportConfig, (void*)pAudioCommHandler);
 
 #endif
 
@@ -1070,11 +1037,9 @@ a2b_HResult a2b_pal_AudioConfigFunc(a2b_Handle hnd,
 	ADI_SPORT_RESULT 		eResult;
 	ADI_A2B_SCOMM_HANDLER 	*pAudioCommHandler;
 	ADI_SPORT_PERI_CONFIG 	*pAD24xxRxSportConfig;
-	ADI_SPORT_PERI_CONFIG 	*pAD24xxTxSportConfig;
 
 	pAudioCommHandler 		= &goA2bAudio.oAudioCommHandler;
 	pAD24xxRxSportConfig	= &goA2bAudio.oAD24xxRxSportConfig;
-	pAD24xxTxSportConfig	= &goA2bAudio.oAD24xxTxSportConfig;
 
 	if(tdmSettings->tdmMode > MAX_NUM_CHANNELS)
 	{
@@ -1085,53 +1050,31 @@ a2b_HResult a2b_pal_AudioConfigFunc(a2b_Handle hnd,
 	pAudioCommHandler->nAD2410TDMSize = tdmSettings->tdmMode;
 
     /* Configuration */
-	pAD24xxRxSportConfig->nMultChDelay  			= tdmSettings->prevCycle;
-	pAD24xxRxSportConfig->bActiveLowFrameSync 		= tdmSettings->fallingEdge;
-	pAD24xxRxSportConfig->nSamplingRisingClkEdge 	= 0U;
+	pAD24xxRxSportConfig->nMultChDelay  			= 1u;//tdmSettings->prevCycle;
+	pAD24xxRxSportConfig->bActiveLowFrameSync 		= 1u;//tdmSettings->fallingEdge;
+	pAD24xxRxSportConfig->nSamplingRisingClkEdge 	= 1u;
 	pAD24xxRxSportConfig->eSportNum 				= ADI_A2B_HAL_SPORT_0;
 	pAD24xxRxSportConfig->eDirection 				= ADI_SPORT_DIR_RX;
-	pAD24xxRxSportConfig->nTDMCh 					= pAudioCommHandler->nAD2410TDMSize;
-	pAD24xxRxSportConfig->pfSPORTCallBack 			= (ADI_A2B_SPORT_CB)&adi_a2b_UpstreamRxCallback;
-	pAD24xxRxSportConfig->nStChnlNo 				= 0;
+	pAD24xxRxSportConfig->nTDMCh 					= 20u;//pAudioCommHandler->nAD2410TDMSize;
+//	pAD24xxRxSportConfig->pfSPORTCallBack 			= (ADI_A2B_SPORT_CB)&adi_a2b_UpstreamRxCallback;
+	pAD24xxRxSportConfig->nStChnlNo 				= 0u;
 	pAD24xxRxSportConfig->nEndChnlNo 				= (pAD24xxRxSportConfig->nTDMCh - 1);
 	pAD24xxRxSportConfig->eSportHalf 				= ADI_HALF_SPORT_A;
 
-	pAD24xxTxSportConfig->nMultChDelay  			= 1;//tdmSettings->prevCycle;
-	pAD24xxTxSportConfig->bActiveLowFrameSync 		= tdmSettings->fallingEdge;
-	pAD24xxTxSportConfig->nSamplingRisingClkEdge 	= 0U;
-	pAD24xxTxSportConfig->eSportNum 				= ADI_A2B_HAL_SPORT_3;
-	pAD24xxTxSportConfig->eDirection 				= ADI_SPORT_DIR_TX;
-	pAD24xxTxSportConfig->nTDMCh 					= pAudioCommHandler->nAD2410TDMSize;
-//	pAD24xxTxSportConfig->pfSPORTCallBack 			= (ADI_A2B_SPORT_CB)&adi_a2b_DownStreamTxCallback;
-	pAD24xxTxSportConfig->nStChnlNo 				= 0;
-	pAD24xxTxSportConfig->nEndChnlNo 				= (pAD24xxTxSportConfig->nTDMCh - 1);
-	pAD24xxTxSportConfig->eSportHalf 				= ADI_HALF_SPORT_A;
-
-	/* Configure AD2410 SPORT */
-//    adi_a2b_InitPCGForAD24xx(pAudioCommHandler->nAD2410TDMSize);
-
     if(bA2BSportOpen == false)
     {
-   	bA2BSportOpen=true;
- /*   	eResult = adi_a2b_SerialPortOpen(A2B_AD24xx_RXSPORT, pAD24xxRxSportConfig, (void*)pAudioCommHandler);
-    	if(eResult != ADI_SPORT_SUCCESS)
-    	{
-    		bA2BSportOpen=false;
-    		return (eResult);
-    	}*/
-/*
-    	eResult = adi_a2b_SerialPortOpen(A2B_AD24xx_TXSPORT, pAD24xxTxSportConfig, (void*)pAudioCommHandler);
+    	bA2BSportOpen=true;
+    	eResult = adi_a2b_SerialPortOpen(A2B_AD24xx_RXSPORT, pAD24xxRxSportConfig, (void*)pAudioCommHandler);
     	if(eResult != ADI_SPORT_SUCCESS)
     	{
     		bA2BSportOpen=false;
     		return (eResult);
     	}
-*/
     }
 
-    eResult = Sport_Init();
+//    eResult = Sport_Init();
 
-//	eResult = adi_a2b_EnableAudioHost();
+	eResult = adi_a2b_EnableAudioHost();
 
 	return (a2b_UInt32)eResult;
 }
@@ -1149,19 +1092,16 @@ static ADI_SPORT_RESULT adi_a2b_EnableAudioHost(void)
 	ADI_SPORT_RESULT eResult;
 
 	/* Start Upstream reception */
-//	eResult = adi_a2b_SerialPortEnable(A2B_AD24xx_TXSPORT, true);
-	/* Start Downstream transmission */
 	eResult = adi_a2b_SerialPortEnable(A2B_AD24xx_RXSPORT, true);
 
 #if A2B_USE_CODEC
-	/* Start ADC */
-//	eResult = adi_a2b_SerialPortEnable(A2B_CODEC_RXSPORT, true);
+
 	/* Start DAC */
 	eResult = adi_a2b_SerialPortEnable(A2B_CODEC_TXSPORT, true);
 
 #endif
 
-	return((a2b_UInt32)eResult);
+	return eResult;
 
 }
 
@@ -1189,14 +1129,12 @@ a2b_HResult a2b_pal_AudioCloseFunc(a2b_Handle hnd)
 	adi_a2b_DeInitPCGForCodec();
 
 #if A2B_USE_CODEC
-//	eResult = adi_a2b_sport_Close(A2B_CODEC_RXSPORT);
-//	eResult = adi_a2b_sport_Close(A2B_CODEC_TXSPORT);
+	eResult = adi_a2b_sport_Close(A2B_CODEC_TXSPORT);
 #endif
 	if(bA2BSportOpen == true)
 	{
 		bA2BSportOpen=false;
-//		eResult = adi_a2b_sport_Close(A2B_AD24xx_TXSPORT);
-//		eResult = adi_a2b_sport_Close(A2B_AD24xx_RXSPORT);
+		eResult = adi_a2b_sport_Close(A2B_AD24xx_RXSPORT);
 	}
 
 	return ((a2b_UInt32)eResult);
@@ -1224,145 +1162,7 @@ a2b_HResult a2b_pal_AudioShutdownFunc(A2B_ECB* ecb)
 	return A2B_RESULT_SUCCESS;
 }
 
-/****************************************************************************/
-/*!
-    @brief			Callback function for upstream data reception
 
-    @param [in]     pTxBufferPtr    Transmission sub buffer pointer.
-    @param [in]     nChannel     	TDM size.
-
-    @return         void
-
-    Note:
-*/
-/********************************************************************************/
-static a2b_UInt32 RXbuffer[24];
-
-static void adi_a2b_UpstreamRxCallback(void* pCommHandle,a2b_UInt32 pRxBufferPtr[], a2b_UInt32 nChannel)
-{
-	ADI_A2B_SCOMM_HANDLER* pAudioRoutingHandle = (ADI_A2B_SCOMM_HANDLER*)pCommHandle;
-
-	adi_a2b_DeInterleaveCopy(ganUpstreamProcessBuffer[pAudioRoutingHandle->nUpstrProcWriteIndex], pRxBufferPtr, nChannel);
-
-	pAudioRoutingHandle->nUpstrProcWriteIndex = (pAudioRoutingHandle->nUpstrProcWriteIndex + 1u) % A2B_MAX_APPBUFFER;
-}
-
-/****************************************************************************/
-/*!
-    @brief			Callback function
-
-    @param [in]     pTxBufferPtr    Transmission sub buffer pointer.
-    @param [in]     nChannel     	TDM size.
-
-    @return         void
-
-    Note:
-*/
-/********************************************************************************/
-static void adi_a2b_DownStreamTxCallback(void* pCommHandle, a2b_UInt32* pTxBufferPtr , a2b_UInt32 nChannel)
-{
-	ADI_A2B_SCOMM_HANDLER* pAudioRoutingHandle = (ADI_A2B_SCOMM_HANDLER*)pCommHandle;
-
-	adi_a2b_upstreamToDwnRouting(pAudioRoutingHandle, pTxBufferPtr, ganUpstreamProcessBuffer[pAudioRoutingHandle->nUpstrToDwnstrReadIndex], nChannel);
-
-#if A2B_USE_CODEC
-//	adi_a2b_ADCToDwnRouting(pAudioRoutingHandle, pTxBufferPtr, ganADCProcessBuffer[pAudioRoutingHandle->nADCToDwnstrReadIndex], nChannel);
-#endif
-	pAudioRoutingHandle->nUpstrToDwnstrReadIndex = (pAudioRoutingHandle->nUpstrToDwnstrReadIndex + 1u) % A2B_MAX_APPBUFFER;
-	pAudioRoutingHandle->nADCToDwnstrReadIndex = (pAudioRoutingHandle->nADCToDwnstrReadIndex + 1u ) % A2B_MAX_APPBUFFER;
-
-}
-
-/****************************************************************************/
-/*!
-    @brief			Callback function ADC data recpetionC
-
-    @param [in]     pRxBufferPtr    Transmission sub buffer pointer.
-    @param [in]     nChannel     	TDM size.
-
-    @return         void
-
-    Note:
-*/
-/********************************************************************************/
-static void adi_a2b_ADCRxCallback(void* pCommHandle, a2b_UInt32* pRxBufferPtr , a2b_UInt32 nChannel)
-{
-	ADI_A2B_SCOMM_HANDLER* pAudioRoutingHandle = (ADI_A2B_SCOMM_HANDLER*)pCommHandle;
-
-	/* Copy SPORT sub buffer data to application buffer */
-	adi_a2b_DeInterleaveCopy(ganADCProcessBuffer[pAudioRoutingHandle->nADCProcWriteIndex], pRxBufferPtr, nChannel);
-	pAudioRoutingHandle->nADCProcWriteIndex = (pAudioRoutingHandle->nADCProcWriteIndex + 1u) % A2B_MAX_APPBUFFER;
-
-}
-
-/****************************************************************************/
-/*!
-    @brief			Callback function for transmission completion to DAC
-
-    @param [in]     pTxBufferPtr    Transmission sub buffer pointer.
-    @param [in]     nChannel     	TDM size.
-
-    @return         void
-
-    Note:
-*/
-/********************************************************************************/
-static void adi_a2b_DACTxCallback(void* pCommHandle, a2b_UInt32* pTxBufferPtr, a2b_UInt32 nChannel)
-{
-	ADI_A2B_SCOMM_HANDLER* pAudioRoutingHandle = (ADI_A2B_SCOMM_HANDLER*)pCommHandle;
-
-
-#if A2B_USE_CODEC
-	/* Upstream to DAC routing */
-	adi_a2b_UpstreamToDACRouting(pCommHandle, pTxBufferPtr, ganUpstreamProcessBuffer[pAudioRoutingHandle->nUpStrtoDACReadIndex], nChannel);
-	/* ADC data to DAC routing */
-//	adi_a2b_ADCToDACRouting(pCommHandle, pTxBufferPtr, ganADCProcessBuffer[pAudioRoutingHandle->nADCtoDACReadIndex], nChannel);
-#endif
-
-	/* Index update */
-	pAudioRoutingHandle->nADCtoDACReadIndex = (pAudioRoutingHandle->nADCtoDACReadIndex + 1u) % A2B_MAX_APPBUFFER;
-	pAudioRoutingHandle->nUpStrtoDACReadIndex = (pAudioRoutingHandle->nUpStrtoDACReadIndex + 1u) % A2B_MAX_APPBUFFER;
-
-}
-
-/***********************************************************************************/
-/*!
-    @brief          This function copies upstream data to the downstream in accordance with routing table
-
-    @param [in]     pHandle       			Pointer to serial port structure.
-    @param [in]     anDwnstreamBuffer     	Pointer to downstream buffer/Destination.
-    @param [in]     anUpstreamBuffer     	Source buffer address/Upstream  .
-    @param [in]     nChannel         		TDM size
-
-    @return         Return code
-                    - 0: Success
-                    - 1: Failure
-*/
-/***********************************************************************************/
-static void adi_a2b_upstreamToDwnRouting(ADI_A2B_SCOMM_HANDLER* pAudioRoutingHandle, a2b_UInt32 anDwnstreamBuffer[], a2b_UInt32 anUpstreamBuffer[][SPORT_BUFFER_SIZE], a2b_UInt32 nChannel )
-{
-    a2b_UInt16 	nIndex1,nIndex2,nIndex3;
-    a2b_UInt8 	nRoutingIndex;
-
-    /* Outer most loop over TX channel */
-    for(nIndex1 = 0u ; nIndex1 < nChannel ; nIndex1++)
-    {
-    	/* Get Routing Index  */
-		nRoutingIndex = pAudioRoutingHandle->pRoutingTable[nIndex1 + A2B_MAX_CODEC_CHANNELS];
-
-		if(nRoutingIndex <= (a2b_UInt8)A2B_UPSTREAM_CH31)
-		{
-			nRoutingIndex -= (a2b_UInt8)A2B_UPSTREAM_CH00;
-			nIndex3 = 0u;
-			/* Transfer the data from Rx to Tx */
-			for(nIndex2 = 0u ; nIndex2 < (a2b_UInt16)SPORT_BUFFER_SIZE * nChannel ; nIndex2 += (a2b_UInt16)nChannel  )
-			{
-  				anDwnstreamBuffer[nIndex1 + nIndex2] = anUpstreamBuffer[nRoutingIndex][nIndex3++];
-			}
-		}
-
-    }
-}
 
 /****************************************************************************/
 /*!
@@ -1472,44 +1272,6 @@ static void adi_a2b_TWICallbackFunction(void* pCBParam, a2b_UInt32 Event, void* 
 }
 
 #if A2B_USE_CODEC
-/***********************************************************************************/
-/*!
-    @brief          This function copies ADC data to downstream
-
-    @param [in]     pAudioRoutingHandle       			Pointer to serial port structure.
-    @param [in]     anDwnstreamBuffer     	Pointer to downstream buffer/Destination.
-    @param [in]     anUpstreamBuffer     	Source buffer address/Upstream  .
-    @param [in]     nChannel         		TDM size
-
-    @return         Return code
-                    - 0: Success
-                    - 1: Failure
-*/
-/***********************************************************************************/
-static void adi_a2b_ADCToDwnRouting(ADI_A2B_SCOMM_HANDLER* pAudioRoutingHandle, a2b_UInt32 anDwnstreamBuffer[], a2b_UInt32 anADCBuffer[][SPORT_BUFFER_SIZE], a2b_UInt32 nChannel )
-{
-    a2b_UInt16 	nIndex1, nIndex2, nIndex3;
-    a2b_UInt8 	nRoutingIndex;
-
-    /* Outer most loop- Rx to Tx copy */
-    for(nIndex1 = 0u ; nIndex1 <nChannel ; nIndex1++)
-    {
-    	nIndex3 = 0u;
-    	/* Get routing table */
-    	nRoutingIndex = pAudioRoutingHandle->pRoutingTable[nIndex1 + A2B_MAX_CODEC_CHANNELS];
-		if((nRoutingIndex > (a2b_UInt8)A2B_UPSTREAM_CH31) && (nRoutingIndex < (a2b_UInt8)A2B_CHANNEL_UNUSED))
-		{
-			nRoutingIndex-= (a2b_UInt8)A2B_ADC_CH00;
-			/* Transfer the data from Rx to Tx */
-			for(nIndex2 = 0u ; nIndex2 < nChannel * SPORT_BUFFER_SIZE ; nIndex2 += (a2b_UInt16)nChannel  )
-			{
-				anDwnstreamBuffer[ nIndex1 + nIndex2 ]  =  anADCBuffer[nRoutingIndex][nIndex3++ ];
-			}
-		}
-
-    }
-
-}
 
 
 /***********************************************************************************/
@@ -1551,75 +1313,9 @@ static void adi_a2b_UpstreamToDACRouting(ADI_A2B_SCOMM_HANDLER* pAudioRoutingHan
 
 }
 
-/***********************************************************************************/
-/*!
-    @brief          This function copies ADC data to DAC
 
-    @param [in]     pHandle       Pointer to serial port structure.
-    @param [in]     iTxBuffer     Destination buffer address.
-    @param [in]     iRxBuffer     Source buffer address.
-    @param [in]     nSize         Size of the buffer.
-
-    @return         Return code
-                    - 0: Success
-                    - 1: Failure
-*/
-/***********************************************************************************/
-static void adi_a2b_ADCToDACRouting(ADI_A2B_SCOMM_HANDLER* pAudioRoutingHandle, a2b_UInt32 anDACBuffer[], a2b_UInt32 anADCBuffer[][SPORT_BUFFER_SIZE], a2b_UInt32 nChannel)
-{
-    a2b_UInt16 	nIndex1, nIndex2, nIndex3;
-    a2b_UInt8 	nRoutingIndex;
-
-    /* Outer most loop */
-    for(nIndex1 = 0u ; nIndex1 < nChannel ; nIndex1++)
-    {
-    	nIndex3 = 0u;
-
-    	nRoutingIndex = pAudioRoutingHandle->pRoutingTable[nIndex1];
-
-		if((nRoutingIndex > (a2b_UInt8)A2B_UPSTREAM_CH31) && (nRoutingIndex < (a2b_UInt8)A2B_CHANNEL_UNUSED))
-		{
-	    	nRoutingIndex-= (a2b_UInt8)A2B_ADC_CH00;
-			/* Transfer the data from Rx to Tx */
-			for(nIndex2 = 0u; nIndex2 < nChannel * SPORT_BUFFER_SIZE; nIndex2 += (a2b_UInt16)nChannel )
-			{
-				anDACBuffer[ nIndex1 + nIndex2 ]  =  anADCBuffer[nRoutingIndex][nIndex3++];
-			}
-		}
-
-    }
-
-}
 #endif
-/***********************************************************************************/
-/*!
-    @brief          This function deinterleaves multi channel audio and stores to processing buffer
 
-
-    @param [in]     anDesbuffer     Destination buffer address.
-    @param [in]     anADCBuffer     Source buffer address.
-    @param [in]     nChannel        Number of TDM channels.
-
-    @return         Return code
-                    - 0: Success
-                    - 1: Failure
-*/
-/***********************************************************************************/
-static void adi_a2b_DeInterleaveCopy( a2b_UInt32 anDesbuffer[][SPORT_BUFFER_SIZE], a2b_UInt32 anSrcBuffer[], a2b_UInt32 nChannel )
-{
-    a2b_UInt16 	nIndex1, nIndex2;
-
-    /* Outer most loop */
-    for(nIndex1 = 0u ; nIndex1 < nChannel ; nIndex1++)
-    {
-		/* Transfer the data from SPORT buffer to App buffer */
-		for(nIndex2 = 0u; nIndex2 < (a2b_UInt16)SPORT_BUFFER_SIZE; nIndex2++  )
-		{
-			anDesbuffer[nIndex1 ][nIndex2 ]  =  anSrcBuffer[nIndex1 + nIndex2 * (a2b_UInt16)nChannel];
-		}
-
-    }
-}
 
 #if defined(A2B_FEATURE_SEQ_CHART) || defined(A2B_FEATURE_TRACE)
 /*!****************************************************************************

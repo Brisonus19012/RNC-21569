@@ -32,11 +32,6 @@ and its licensors.
 #include "adi_a2b_sportdriver.h"
 /*============= D E F I N E S =============*/
 
-#define A2B_CODEC_SPORTTX_NO		(0)
-#define A2B_CODEC_SPORTRX_NO		(1)
-#define A2B_AD24XX_SPORTTX_NO		(2)
-#define A2B_AD24XX_SPORTRX_NO		(3)
-
 #define MAX_NUMBER_OF_CHANNELS		(32u)
 #define A2B_MAX_CODEC_CHANNELS		(2u)
 #define MAX_A2B_DATAPIPE_I2S_STREAMS (8u)
@@ -86,12 +81,7 @@ typedef struct
     SCOMM_CALL_BACK pCallbackhandle;
 
     volatile uint8 nUpstrProcWriteIndex;
-    volatile uint8 nADCProcWriteIndex;
 
-    volatile uint8 nUpstrToDwnstrReadIndex;
-    volatile uint8 nADCToDwnstrReadIndex;
-
-    volatile uint8 nADCtoDACReadIndex;
     volatile uint8 nUpStrtoDACReadIndex;
 
 

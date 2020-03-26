@@ -23,21 +23,21 @@ C_DEPS += \
 a2b_stack/a2bstack-gen/a2bplugin-slave/src/a2b_peri_config.doj: ../a2b_stack/a2bstack-gen/a2bplugin-slave/src/a2b_peri_config.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bplugin-slave/src/a2b_peri_config.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bplugin-slave/src/a2b_peri_config.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bplugin-slave/src/a2bslave_plugin.doj: ../a2b_stack/a2bstack-gen/a2bplugin-slave/src/a2bslave_plugin.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bplugin-slave/src/a2bslave_plugin.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bplugin-slave/src/a2bslave_plugin.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 a2b_stack/a2bstack-gen/a2bplugin-slave/src/a2bslave_verinfo.doj: ../a2b_stack/a2bstack-gen/a2bplugin-slave/src/a2bslave_verinfo.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bplugin-slave/src/a2bslave_verinfo.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "a2b_stack/a2bstack-gen/a2bplugin-slave/src/a2bslave_verinfo.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

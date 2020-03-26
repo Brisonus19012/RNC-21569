@@ -107,7 +107,7 @@ all: RNC_21569.dxe
 RNC_21569.dxe: $(LDF_SRCS) $(SRC_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: CrossCore SHARC Linker'
-	cc21k -proc ADSP-21569 -si-revision any -TC:/Users/86157/Desktop/20200219/RNC_21569/system/startup_ldf/app.ldf -no-mem -LC:/Users/86157/Desktop/20200219/RNC_21569/Debug/system/startup_ldf -flags-link -MDCORE0,-MDDEBUG -add-debug-libpaths -o RNC_21569.dxe @input-file.txt  -flags-link -od,.\.
+	cc21k -proc ADSP-21569 -si-revision any -TC:/Users/86157/Desktop/20200306/RNC_21569/system/startup_ldf/app.ldf -no-mem -LC:/Users/86157/Desktop/20200306/RNC_21569/Debug/system/startup_ldf -flags-link -MDCORE0,-MDDEBUG -add-debug-libpaths -o RNC_21569.dxe @input-file.txt  -flags-link -od,.\.
 	@echo 'Finished building target: $@'
 	@echo ' '
 

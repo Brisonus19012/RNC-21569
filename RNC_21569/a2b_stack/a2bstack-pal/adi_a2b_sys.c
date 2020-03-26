@@ -23,7 +23,11 @@ and its licensors.
 
 /*============= D E F I N E S =============*/
 
+extern void ConfigSoftSwitches_ADC_DAC(void);
+extern void ConfigSoftSwitches_ADAU_Reset(void);
+
 int ADAU_1962_init(void);
+void Switch_Configurator(void);
 
 static int ADAU_1962_Pllinit(void);
 static void Write_TWI_8bit_Reg(unsigned char Reg_ID, unsigned char Tx_Data);
@@ -32,14 +36,13 @@ static unsigned char Read_TWI_8bit_Reg(unsigned char Reg_ID);
 static ADI_A2B_SYS_RESULT CODEC_Init(void);
 static ADI_PWR_RESULT CheckClock(ADI_A2B_SYS_POWER_CONFIG *pSysPowerConfig);
 
+
 /*============= C O D E =============*/
 
 /*
 ** Function Prototype section
 ** (static-scoped functions)
 */
-
-
 
 
 #define PORT_CODEC_RESET    (ADI_A2B_HAL_GPIO_PORT_A)            /*!< Port used for resetting the ADC and DAC. This is
@@ -83,7 +86,7 @@ struct Config_Table Config_array_DAC[28] = {
 		   	    {     ADAU1962_PDN_CTRL_2,	    0xff},
 		   	    {     ADAU1962_PDN_CTRL_3,	    0x0f},
 		   	    {     ADAU1962_DAC_CTRL0,		0x19},  /* TDM8,48khz */
-		   	    {     ADAU1962_DAC_CTRL1,		0x22},  /* DLRCLK/DBCLK as Master,latch data in DBCLK falling edge */
+		   	    {     ADAU1962_DAC_CTRL1,		0x22},  /* DLRCLK/DBCLK as Slave,latch data in DBCLK falling edge */
 		   	    {     ADAU1962_DAC_CTRL2,		0x00},
 		   	    {     ADAU1962_DAC_MUTE1,	    0x0},
 		   	    {     ADAU1962_DAC_MUTE2,	    0x00},
@@ -110,6 +113,43 @@ struct Config_Table Config_array_DAC[28] = {
 
 };
 
+
+/*
+ * Prepares Switch configuration.
+ *
+ * Parameters
+ *  None
+ *
+ * Returns
+ *  None
+ *
+ */
+void Switch_Configurator()
+{
+	int delay11=0xffff;
+
+
+	/* Software Switch Configuration for Enabling ADC-DAC */
+	ConfigSoftSwitches_ADC_DAC();
+
+	while(delay11--)
+	{
+		asm("nop;");
+	}
+
+	/* Software Switch Configuration for Re-Setting ADC-DAC  */
+	ConfigSoftSwitches_ADAU_Reset();
+
+
+	/* wait for Codec to up */
+	delay11=0xffff;
+	while(delay11--)
+	{
+		asm("nop;");
+	}
+}
+
+
 /*
  * Function Definition section
  */
@@ -133,12 +173,12 @@ struct Config_Table Config_array_DAC[28] = {
  */
 ADI_A2B_SYS_RESULT adi_a2b_sys_Init(void *pMemBlock, uint32_t const  nMemorySize,ADI_A2B_SYS_CONFIG *pSysConfig)
 {
-//    uint32_t nMemSz=0;
+
     uint32_t *pMemPtr;
-    //ADI_A2B_SYS_POWER_CONFIG oPwrCfg;        /* Config structure for power */
-//    ADI_A2B_SYS_ADC_CONFIG oAdcConfig;        /* Config structure for ADC */
-//    ADI_A2B_SYS_DAC_CONFIG oDacConfig;        /* Config structure for DAC */
     ADI_A2B_SYS_RESULT eResult;
+
+
+	Switch_Configurator();
 
     if(pSysConfig->bProcMaster == true)
     {
@@ -151,19 +191,6 @@ ADI_A2B_SYS_RESULT adi_a2b_sys_Init(void *pMemBlock, uint32_t const  nMemorySize
 
         pMemPtr = (uint32_t*)pMemBlock;
 
-        /* Power initialization
-        oPwrCfg.eCGUDev = ADI_A2B_SYS_POWER_CGUDEV_1;
-        oPwrCfg.nCoreClk = ADI_A2B_SYS_POWER_CCLK_MAX;
-        oPwrCfg.nSysClk = ADI_A2B_SYS_POWER_SYSCLK_MAX;*/
-        /* This is not enabled for ARM application since power initialization must be done as part of preload dxe */
-        /* There will be problems if power settings are reconfigured after DDR initialization */
-      //  oPwrCfg.bSetCoreSysClk = false;
-
-        /* eResult = Power_Init(&oPwrCfg);
-        if(eResult != ADI_A2B_SYS_SUCCESS)
-        {
-            return ADI_A2B_SYS_FAILURE;
-        }*/
 
     }
     else
@@ -238,7 +265,7 @@ static ADI_A2B_SYS_RESULT CODEC_Init(void)
 
 ADI_A2B_SYS_RESULT Power_Init(ADI_A2B_SYS_POWER_CONFIG *pSysPowerConfig)
 {
-	ADI_PWR_RESULT  eResult = ADI_A2B_SYS_SUCCESS;
+	ADI_PWR_RESULT  eResult = ADI_PWR_SUCCESS;
 
     /* Set the clocks for cores and system clock */
     if(pSysPowerConfig->bSetCoreSysClk == true)

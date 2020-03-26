@@ -30,21 +30,21 @@ C_DEPS += \
 system/startup_ldf/app_IVT.doj: ../system/startup_ldf/app_IVT.s
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC Assembler'
-	easm21k -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -si-revision any -g -DCORE0 -D_DEBUG @includes-2254477f520f0869670e3ff0574384b3.txt -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_IVT.d" -o "$@" "$<"
+	easm21k -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -si-revision any -g -DCORE0 -D_DEBUG @includes-2ef84444678be1548e14f9503c1f51fc.txt -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_IVT.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 system/startup_ldf/app_heaptab.doj: ../system/startup_ldf/app_heaptab.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-3915bc24782d34f6e0419ae0cad69e4e.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/startup_ldf/app_heaptab.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -flags-compiler --no_wrap_diagnostics -si-revision any -g -DCORE0 -D_DEBUG -DADI_DEBUG @includes-dc3f4b3fa9e2a6e9c52a36d2c8e12f5c.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/startup_ldf/app_heaptab.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 system/startup_ldf/app_startup.doj: ../system/startup_ldf/app_startup.s
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC Assembler'
-	easm21k -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -si-revision any -g -DCORE0 -D_DEBUG @includes-2254477f520f0869670e3ff0574384b3.txt -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_startup.d" -o "$@" "$<"
+	easm21k -file-attr ProjectName="RNC_21569" -proc ADSP-21569 -si-revision any -g -DCORE0 -D_DEBUG @includes-2ef84444678be1548e14f9503c1f51fc.txt -swc -char-size-8 -gnu-style-dependencies -MM -Mo "system/startup_ldf/app_startup.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
